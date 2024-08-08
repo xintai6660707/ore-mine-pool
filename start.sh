@@ -5,7 +5,7 @@ COMMAND="nohup ./ore-mine-pool-linux worker --server-url http://47.254.156.237:7
 
 # 启动进程的函数
 start_process() {
-    eval $COMMAND
+    eval "$COMMAND"
 }
 
 # 主要的监控循环

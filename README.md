@@ -11,7 +11,7 @@ ore-mine-pool是为orev2实现的矿池，矿工可以更简单的进行挖矿�
 ## Worker 使用方法
 
 ```bash
-1. git clone git@github.com:xintai6660707/ore-mine-pool.git
+1. git clone https://github.com/xintai6660707/ore-mine-pool.git
 2. cd ore-mine-pool
 3. chmod +x start.sh
 4. chmod +x ore-mine-pool-linux
