@@ -14,10 +14,11 @@ ore-mine-pool是为orev2实现的矿池，矿工可以更简单的进行挖矿�
 1. git clone git@github.com:xintai6660707/ore-mine-pool.git
 2. cd ore-mine-pool
 3. chmod +x start.sh
-4. 修改start.sh中的worker-wallet-address为你的钱包地址，并且确保钱包已经有对应的ore AssociatedToken地址
-5. 如果没有ore钱包地址，可以使用 ./ore-mine-pool-linux create-associated-token --keypair "你的钱包私钥地址" --priority-fee 20000 创建ore关联账户(你有考虑私钥安全，也可以自己创建)
-6. nohup ./start.sh > start.log 2>&1 & //后台启动worker
-7. tail -f  worker.log //查看worker日志
+4. chmod +x ore-mine-pool-linux
+5. 修改start.sh中的worker-wallet-address为你的钱包地址，并且确保钱包已经有对应的ore AssociatedToken地址
+6. 如果没有ore钱包地址，可以使用 ./ore-mine-pool-linux create-associated-token --keypair "你的钱包私钥地址" --priority-fee 20000 创建ore关联账户(你有考虑私钥安全，也可以自己创建)
+7. nohup ./start.sh > start.log 2>&1 & //后台启动worker
+8. tail -f  worker.log //查看worker日志
 ```
 
 ## 工作原理
