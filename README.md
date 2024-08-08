@@ -3,7 +3,9 @@
 
 ore-mine-pool是为orev2实现的矿池，矿工可以更简单的进行挖矿，相对于ore-cli，更易于使用，更高效
 
+## 交流
 
+[discord](https://discord.com/channels/1271164030131765362/1271164843571023902)
 
 
 ## Worker 使用方法
