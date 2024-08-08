@@ -1,0 +1,1 @@
+# ore-mine-pool
