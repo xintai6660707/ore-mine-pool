@@ -77,8 +77,13 @@ worker:
 ## TODO
 
 Windows version support
+
 Browser support
+
 Worker mining earnings subscription
+
 Multi-server fault tolerance, switch to another server in case of failure
+
 On-chain program outputs the hash of the current task submission, allowing users to verify no fraudulent behavior
+
 Dune charts
