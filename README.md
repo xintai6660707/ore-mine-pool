@@ -56,6 +56,10 @@ We handle blockchain interactions, and the worker only needs to fetch tasks, com
 
 Only the wallet public key is required, with no risk of private key leakage.  
 
+## Transparency (Anti-Fraud)
+
+We will record the hash of each task's final computation as an event. The worker will provide an event subscription feature, allowing you to view detailed information for each transaction, including the final hash, worker wallet address, amount, difficulty, etc. This proves that the high-difficulty hash you computed is indeed rewarded to you, ensuring no fraudulent behavior. Unlike other pools, we are fully transparent.
+
 ## Total earnings improvement
 
 In total: 1.54 * 2 * 2 * 2 = 12.32 times efficiency improvement. (Currently, without staking rewards, the efficiency improvement is 6.16 times)  
