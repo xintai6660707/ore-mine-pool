@@ -80,10 +80,6 @@ pool-fee: 8%            (我们承担gas费用，以及server端维护)
 ##### ore-mine-pool链上程序地址: [Feei2iwqp9Adcyte1F5XnKzGTFL1VDg4VyiypvoeiJyJ](https://solscan.io/account/Feei2iwqp9Adcyte1F5XnKzGTFL1VDg4VyiypvoeiJyJ)
 ##### program-fee账户: [链接](https://solscan.io/account/4756i3S8EPsTvKjVvUaCbP9JF8JpjQW7AmXEZnGeZDhp)
 
-##### worker:
-[worker0](https://solscan.io/account/H2VLeBDZFXZa591QkGGutTG8cF2RQUS49T2uZZyS5FcX) 使用96核cpu
-
-[worker1](https://solscan.io/account/92Zguk3WKznDU57u3rTJtKsib9vGGCnMxMZ9LyBCWork)使用48核cpu
 
 #####TODO
 1、windows版本支持

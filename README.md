@@ -73,10 +73,6 @@ ore-mine-pool on-chain program address: [Feei2iwqp9Adcyte1F5XnKzGTFL1VDg4Vyiypvo
 
 program-fee account: [link](https://solscan.io/account/4756i3S8EPsTvKjVvUaCbP9JF8JpjQW7AmXEZnGeZDhp)
 
-worker:
-
-[worker0](https://solscan.io/account/H2VLeBDZFXZa591QkGGutTG8cF2RQUS49T2uZZyS5FcX) using 96-core CPU  
-[worker1](https://solscan.io/account/92Zguk3WKznDU57u3rTJtKsib9vGGCnMxMZ9LyBCWork) using 48-core CPU
 
 ## TODO
 
