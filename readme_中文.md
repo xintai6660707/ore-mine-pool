@@ -71,9 +71,8 @@ ore-cli提交奖励，需要消耗gas费用，在很多情况，会占用你奖�
 
 ## 费用
 
-onchain-program-fee: 2% (提供最好的bus选择，以及奖励分发功能)
 
-pool-fee: 8%            (我们承担gas费用，以及server端维护)
+pool-fee: 15%            (我们承担gas费用，以及server端维护)
 
 ## 链接
 

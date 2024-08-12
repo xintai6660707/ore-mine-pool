@@ -66,7 +66,10 @@ In total: 1.54 * 2 * 2 * 2 = 12.32 times efficiency improvement. (Currently, wit
 
 ## Fees
 
-onchain-program-fee: 2% (providing the best bus selection and reward distribution functionality)  pool-fee: 8% (we cover gas fees and server maintenance)  
+
+pool-fee: 15% (we cover gas fees and server maintenance)  
+
+
 
 ## Links
 ore-mine-pool on-chain program address: [Feei2iwqp9Adcyte1F5XnKzGTFL1VDg4VyiypvoeiJyJ](https://solscan.io/account/Feei2iwqp9Adcyte1F5XnKzGTFL1VDg4VyiypvoeiJyJ)
