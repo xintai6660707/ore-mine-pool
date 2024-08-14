@@ -1,10 +1,12 @@
 # ore-mine-pool
 
 ore-mine-pool is a mining pool implemented for orev2, making it easier for miners to mine. Compared to ore-cli, it is easier to use and more efficient.
+Our current output of about 665 / day, about 46% of the total network capacity.
 
 ## Communication
 
 [discord](https://discord.gg/DeATb7MS)
+[dune](https://dune.com/oreminepool/ore-mine-pool-dashboard)
 
 ## Worker Usage
 
@@ -27,7 +29,8 @@ pkill -f ore-mine-pool
 
 
 We run the pool server and use multiple wallets to get mining tasks. The Worker fetches the current task with the lowest difficulty from the server every 10 seconds, performs 10 seconds of computation, and submits the highest difficulty answer obtained. The server records the wallet of the submitter with the highest difficulty answer. When the task needs to be submitted at 55 seconds, the highest difficulty answer will be submitted to the blockchain, and the miner fee will be collected.  
-Why use ore-mine-pool-worker
+
+##### Why use ore-mine-pool-worker
 
 ## Higher computational efficiency
 
@@ -79,14 +82,14 @@ program-fee account: [link](https://solscan.io/account/4756i3S8EPsTvKjVvUaCbP9JF
 
 ## TODO
 
-Windows version support
+Windows version support(done)
 
 Browser support
 
 Worker mining earnings subscription
 
-Multi-server fault tolerance, switch to another server in case of failure
+Multi-server fault tolerance, switch to another server in case of failure(done)
 
-On-chain program outputs the hash of the current task submission, allowing users to verify no fraudulent behavior
+On-chain program outputs the hash of the current task submission, allowing users to verify no fraudulent behavior(done)
 
-Dune charts
+Dune charts(done)

@@ -1,11 +1,14 @@
 # ore-mine-pool
 
 
-ore-mine-pool是为orev2实现的矿池，矿工可以更简单的进行挖矿，相对于ore-cli，更易于使用，更高效
+ore-mine-pool是为orev2实现的矿池，矿工可以更简单的进行挖矿，相对于ore-cli，更易于使用，更高效。
+我们目前产出约665个/天，占全网产能46%。
 
 ## 交流
 
 [discord](https://discord.gg/DeATb7MS)
+
+[dune](https://dune.com/oreminepool/ore-mine-pool-dashboard)
 
 
 ## Worker 使用方法
@@ -80,10 +83,16 @@ pool-fee: 15%            (我们承担gas费用，以及server端维护)
 ##### program-fee账户: [链接](https://solscan.io/account/4756i3S8EPsTvKjVvUaCbP9JF8JpjQW7AmXEZnGeZDhp)
 
 
-#####TODO
-1、windows版本支持
+##### TODO
+
+1、windows版本支持(已完成)
+
 2、浏览器支持
+
 3、worker挖矿收益订阅
-4、多服务端容错，服务异常可切换
-5、链上程序输出本次任务提交的hash，方便用户验证没有欺诈行为
-6、dune图表
+
+4、多服务端容错，服务异常可切换(已完成)
+
+5、链上程序输出本次任务提交的hash，方便用户验证没有欺诈行为(已完成)
+
+6、dune图表(已完成)
