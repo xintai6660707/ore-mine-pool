@@ -27,13 +27,13 @@ pkill -f ore-mine-pool
 
 
 monitor all program record use:
-./ore-mine-pool-linux -- monitor   --rpc-ws-url  wss://xxxxxx
+./ore-mine-pool-linux  monitor   --rpc-ws-url  wss://xxxxxx
 
 The address you want to monitor, by default, monitors all transactions throughout the program. You can fill in your wallet address to monitor only your wallet:
-./ore-mine-pool-linux -- monitor   --rpc-ws-url  wss://xxxxxx --monitor-address  your-wallet-address
+./ore-mine-pool-linux  monitor   --rpc-ws-url  wss://xxxxxx --monitor-address  your-wallet-address
 
 save record as csv ,for excel analysis:
-./ore-mine-pool-linux -- monitor   --rpc-ws-url  wss://xxxxxx   --csv_mode
+./ore-mine-pool-linux  monitor   --rpc-ws-url  wss://xxxxxx   --csv_mode
 
 ```
 ## Working Principle

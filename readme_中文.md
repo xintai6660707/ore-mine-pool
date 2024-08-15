@@ -31,14 +31,14 @@ pkill -f ore-mine-pool
 
 
 监控solana链上ore-mine-pool所有记录:
-./ore-mine-pool-linux -- monitor   --rpc-ws-url  wss://xxxxxx
+./ore-mine-pool-linux  monitor   --rpc-ws-url  wss://xxxxxx
 
 仅仅监控你关注的地址的记录:
-./ore-mine-pool-linux -- monitor   --rpc-ws-url  wss://xxxxxx --monitor-address  your-wallet-address
+./ore-mine-pool-linux  monitor   --rpc-ws-url  wss://xxxxxx --monitor-address  your-wallet-address
 
 将记录保存到csv,以便用excel分析
 save record as csv ,for excel analysis:
-./ore-mine-pool-linux -- monitor   --rpc-ws-url  wss://xxxxxx   --csv_mode
+./ore-mine-pool-linux  monitor   --rpc-ws-url  wss://xxxxxx   --csv_mode
 ```
 
 ## 工作原理
