@@ -24,6 +24,17 @@ Our current output of about 665 / day, about 46% of the total network capacity.
 To pause the task:
 pkill -f start.sh
 pkill -f ore-mine-pool
+
+
+monitor all program record use:
+./ore-mine-pool-linux -- monitor   --rpc-ws-url  wss://xxxxxx
+
+The address you want to monitor, by default, monitors all transactions throughout the program. You can fill in your wallet address to monitor only your wallet:
+./ore-mine-pool-linux -- monitor   --rpc-ws-url  wss://xxxxxx --monitor-address  your-wallet-address
+
+save record as csv ,for excel analysis:
+./ore-mine-pool-linux -- monitor   --rpc-ws-url  wss://xxxxxx   --csv_mode
+
 ```
 ## Working Principle
 
