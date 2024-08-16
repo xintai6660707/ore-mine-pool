@@ -6,7 +6,7 @@ ore-mine-pool是为orev2实现的矿池，矿工可以更简单的进行挖矿�
 
 ## 交流
 
-[discord](https://discord.gg/DeATb7MS)
+[discord](https://discord.gg/ZjvxNE7t)
 
 [dune](https://dune.com/oreminepool/ore-mine-pool-dashboard)
 

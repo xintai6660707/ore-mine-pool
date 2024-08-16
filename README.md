@@ -5,7 +5,7 @@ Our current output of about 665 / day, about 46% of the total network capacity.
 
 ## Communication
 
-[discord](https://discord.gg/DeATb7MS)
+[discord](https://discord.gg/ZjvxNE7t)
 [dune](https://dune.com/oreminepool/ore-mine-pool-dashboard)
 
 ## Worker Usage
