@@ -31,7 +31,7 @@ If you fully trust us -> You can stake ore in the wallet to get a staking coeffi
 
 2.Modify --base-jito-tip to adjust the jito fee. The current calculation rule is (task difficulty - 14) * 2000 + base-jito-tip.  
 
-3.Modify --min_difficulty to adjust the minimum difficulty requirement. Hashes below this difficulty will no longer be reported by the client.  
+3.Modify --min-difficulty to adjust the minimum difficulty requirement. Hashes below this difficulty will no longer be reported by the client.  
 
 4.Wallet quantity: You need at least 2 wallets to enjoy seamless worker computation (one wallet in the result submission phase while the other is in the computation phase). The recommendation is 3-5 wallets, and it should not exceed 5.  
 
