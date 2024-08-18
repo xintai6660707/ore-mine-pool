@@ -1,6 +1,6 @@
 # Server
 
-### Who needs to run ore-mine-pool
+### Who needs to run ore-mine-pool server
 Miners with a total hash rate of approximately 2M H/s or more need to run the ore-mine-pool server. This way, you can establish your own ore mining cluster.
 
 ### How to run

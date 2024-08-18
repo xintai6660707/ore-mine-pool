@@ -1,6 +1,6 @@
 # 服务端
 
-### 谁需要运行ore-mine-pool
+### 谁需要运行ore-mine-pool服务端
 大约总算力达到2M H/s以上的矿工，才需要运行ore-mine-pool server。这样你可以建立属于自己的ore挖矿集群。
 
 ### 如何运行
