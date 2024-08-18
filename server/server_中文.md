@@ -33,11 +33,11 @@ nohup ./start.sh > start.log 2>&1 &
 
 4、钱包数量，至少2个钱包你才能享受到无缝的woker计算(在一个钱包进入提交结果阶段时，另一个在计算阶段)，建议是3-5个，不应该超过5个。
 
-5、如果你选择质押，又资金有限，建议使用更少的钱包来集中质押，享受更高的质押系数。维持平均难度28以上。这样你会放弃一些低难度上链28以下，但是28以上会获得更高的质押系数。
+5、如果你选择质押，又资金有限，建议使用更少的钱包来集中质押，享受更高的质押系数。维持平均难度28以上。这样你会放弃一些低难度上链(如28以下)，但是28以上会获得更高的质押系数。
 
 6、当前最高质押用户在270-441之间变动，为了使质押更有效率，建议单个钱包质押在270以下。
 
-7、rpc需要使用进行了sol质押的rpc供应商，以便带用[swQoS](https://www.helius.dev/blog/stake-weighted-quality-of-service-everything-you-need-to-know)的rpc服务，增加上链速度与成功率。如helius、triton。
+7、rpc需要使用进行了sol质押的rpc供应商，以便使用支持[swQoS](https://www.helius.dev/blog/stake-weighted-quality-of-service-everything-you-need-to-know)的rpc服务，增加上链速度与成功率。如helius、triton。
 
 ### 费率
 
