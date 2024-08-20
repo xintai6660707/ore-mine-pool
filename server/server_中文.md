@@ -15,6 +15,33 @@ nohup ./start.sh > start.log 2>&1 &
 5、使用你的woker连接你的server，修改worker启动参数中的 --server-url 为你的server地址
 ```
 
+### 如何运行 route server
+如果你需要多个server，想要轮训他们以便在某个server不工作时，依旧不影响woker计算的话。你可以启动一个route server
+```bash
+
+1、当前目录下的server.json文件，server_list中填入你的server地址列表
+{
+  "list": [
+    {
+      "key": "public",
+      "server_list": [
+        "http://public01.oreminepool.top:8080/",
+        "http://public02.oreminepool.top:8080/",
+        "http://public03.oreminepool.top:8080/",
+        "http://public04.oreminepool.top:8080/",
+        "http://public05.oreminepool.top:8080/",
+        "http://public06.oreminepool.top:8080/"
+      ]
+    }
+  ]
+}
+2、运行route server，它将读取上面的配置文件
+nohup ./ore-mine-pool-linux server --route  --port 8080 >> server.log 2>&1 &
+3、修改你的woker启动参数中的 --route-server-url 为你的route server地址。修改--server-url为你定义server列表的key，如上demo为public
+4、这样你的woker会先从route server获取最新的服务器列表，然后轮训他们做任务
+```
+
+
 ### 安全须知
 由于我们是闭源项目，使用server端会读取你的server端存储的挖矿钱包。因此你会有资金安全的担忧。
 

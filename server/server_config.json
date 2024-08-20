@@ -1,0 +1,34 @@
+{
+  "list": [
+    {
+      "key": "public",
+      "server_list": [
+        "http://public01.oreminepool.top:8080/",
+        "http://public02.oreminepool.top:8080/",
+        "http://public03.oreminepool.top:8080/",
+        "http://public04.oreminepool.top:8080/",
+        "http://public05.oreminepool.top:8080/",
+        "http://public06.oreminepool.top:8080/"
+      ]
+    },{
+      "key": "stake",
+      "server_list": [
+        "http://stake01.oreminepool.top:8080/",
+        "http://stake02.oreminepool.top:8080/"
+      ]
+    }
+  ,{
+      "key": "public&stake",
+      "server_list": [
+        "http://public01.oreminepool.top:8080/",
+        "http://public02.oreminepool.top:8080/",
+        "http://public03.oreminepool.top:8080/",
+        "http://public04.oreminepool.top:8080/",
+        "http://public05.oreminepool.top:8080/",
+        "http://public06.oreminepool.top:8080/",
+        "http://stake01.oreminepool.top:8080/",
+        "http://stake02.oreminepool.top:8080/"
+      ]
+    }
+  ]
+}
