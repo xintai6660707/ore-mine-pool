@@ -10,6 +10,7 @@ ore-mine-pool是为orev2实现的矿池，矿工可以更简单的进行挖矿�
 
 [dune](https://dune.com/oreminepool/ore-mine-pool-dashboard)
 
+[文档](https://minership.gitbook.io/ore-mine-pool-tutorial)
 
 ## Worker 使用方法
 
@@ -19,7 +20,6 @@ ore-mine-pool是为orev2实现的矿池，矿工可以更简单的进行挖矿�
 3. chmod +x start.sh
 4. chmod +x ore-mine-pool-linux
 5. 修改start.sh中的worker-wallet-address为你的钱包地址，并且确保钱包已经有对应的ore AssociatedToken地址
-6. 修改start.sh中的threads为你cpu的线程数
 6. 如果没有ore钱包地址，可以使用 ./ore-mine-pool-linux create-associated-token --keypair "你的钱包私钥地址" --priority-fee 20000 创建ore关联账户(你有考虑私钥安全，也可以自己创建)
 7. nohup ./start.sh > start.log 2>&1 & //后台启动worker
 8. tail -f  worker.log //查看worker日志
@@ -40,6 +40,15 @@ pkill -f ore-mine-pool
 save record as csv ,for excel analysis:
 ./ore-mine-pool-linux  monitor   --rpc-ws-url  wss://xxxxxx   --csv_mode
 ```
+## 新版本0.1.5发布：
+
+更新客户端和start.sh
+
+绑定核心和使用numa。如果你使用表现不如之前版本，可以先使用0.1.4版本。
+
+## 新版本0.1.3发布：
+
+它只是增加了客户端的稳定性，如果你使用时有稳定性问题，那么你才需要更新。
 
 ## 新版本0.1.2发布：
 
