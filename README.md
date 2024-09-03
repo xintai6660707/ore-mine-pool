@@ -7,6 +7,7 @@ Our current output of about 665 / day, about 46% of the total network capacity.
 
 [discord](https://discord.gg/PjpqgmJkkY)
 [dune](https://dune.com/oreminepool/ore-mine-pool-dashboard)
+[document](https://minership.gitbook.io/ore-mine-pool-tutorial)
 
 ## Worker Usage
 
@@ -16,7 +17,6 @@ Our current output of about 665 / day, about 46% of the total network capacity.
 3. chmod +x start.sh
 4. chmod +x ore-mine-pool-linux
 5. Modify the worker-wallet-address in start.sh to your wallet address and ensure the wallet has the corresponding ore AssociatedToken address.
-6. Modify the threads in start.sh to the number of threads of your CPU.
 6. If you don't have an ore wallet address, you can use ./ore-mine-pool-linux create-associated-token --keypair "your wallet private key address" --priority-fee 20000 to create an ore associated account (consider the security of your private key, you can also create it yourself).
 7. nohup ./start.sh > start.log 2>&1 & // Start the worker in the background
 8. tail -f worker.log // View worker logs
@@ -36,6 +36,17 @@ save record as csv ,for excel analysis:
 ./ore-mine-pool-linux  monitor   --rpc-ws-url  wss://xxxxxx   --csv_mode
 
 ```
+## 0.1.5 has been released
+
+Update the client and  start.sh
+
+Bind core and use numa. If you don't perform as well as the previous version, you can try version 0.1.4 first.
+
+## 0.1.3 has been released
+
+it just adds stability to the client, if you have stability issues with it, then you need to update.
+
+
 ## Working Principle
 
 
