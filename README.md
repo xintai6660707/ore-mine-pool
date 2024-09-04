@@ -18,8 +18,9 @@ Our current output of about 665 / day, about 46% of the total network capacity.
 4. chmod +x ore-mine-pool-linux
 5. Modify the worker-wallet-address in start.sh to your wallet address and ensure the wallet has the corresponding ore AssociatedToken address.
 6. If you don't have an ore wallet address, you can use ./ore-mine-pool-linux create-associated-token --keypair "your wallet private key address" --priority-fee 20000 to create an ore associated account (consider the security of your private key, you can also create it yourself).
-7. nohup ./start.sh > start.log 2>&1 & // Start the worker in the background
-8. tail -f worker.log // View worker logs
+7. We have supported simultaneous COAL mining,make sure your payment wallet with COAL accounts E3yUqBNTZxV8ELvW99oRLC7z4ddbJqqR4NphwrMug9zu (address), if there is no COAL to your wallet account, purchase a little. will automatically start receiving COAL rewards at the same time
+8. nohup ./start.sh > start.log 2>&1 & // Start the worker in the background
+9. tail -f worker.log // View worker logs
 
 To pause the task:
 pkill -f start.sh
