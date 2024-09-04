@@ -33,17 +33,19 @@ If you fully trust us -> You can stake ore in the wallet to get a staking coeffi
 
 3.Modify --min-difficulty to adjust the minimum difficulty requirement. Hashes below this difficulty will no longer be reported by the client.  
 
-4.Wallet quantity: You need at least 2 wallets to enjoy seamless worker computation (one wallet in the result submission phase while the other is in the computation phase). The recommendation is 3-5 wallets, and it should not exceed 5.  
+4.Modify --per-bundle-mine-count to bundle the list of mining wallets, and when it is set to 3, every 3 mining wallets will be sent to the chain as the same transaction. In this way, when there are 15 wallets on the server side, they are grouped by 3 for a total of 5 wallets, which will reduce the competition loss.
 
-5.If you choose to stake and have limited funds, it is recommended to use fewer wallets to concentrate staking and enjoy a higher staking coefficient. Maintain an average difficulty above 28. This way, you will forgo some low-difficulty on-chain transactions below 28, but above 28, you will get a higher staking coefficient.
+5.Wallet quantity: You need at least 2 wallets to enjoy seamless worker computation (one wallet in the result submission phase while the other is in the computation phase). The recommendation is 3-5 wallets, and it should not exceed 5.  
 
-6.The current highest staking user fluctuates between 270-441. To make staking more efficient, it is recommended to stake below 270 per wallet.  
+6.If you choose to stake and have limited funds, it is recommended to use fewer wallets to concentrate staking and enjoy a higher staking coefficient. Maintain an average difficulty above 28. This way, you will forgo some low-difficulty on-chain transactions below 28, but above 28, you will get a higher staking coefficient.
 
-7.The rpc needs to use an rpc provider that has staked sol to use the swQoS rpc service, increasing the speed and success rate of on-chain transactions, such as helius and triton.  
+7.The current highest staking user fluctuates between 270-441. To make staking more efficient, it is recommended to stake below 270 per wallet.  
+
+8.The rpc needs to use an rpc provider that has staked sol to use the swQoS rpc service, increasing the speed and success rate of on-chain transactions, such as helius and triton.  
 
 ### Fees
 
-1.15%(All our fees are stake into the stake pool, and when the total amount of the pledge pool reaches 4000 ore, it will be reduced to 10%)
+1.12%
 
 2.Miners bear the gas and rpc fees themselves.
 
