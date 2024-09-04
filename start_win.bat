@@ -32,7 +32,7 @@ if '%%n'=='%_processNameExt%' (goto checkend)
 pushd %runAppFolder%
 echo %date:~0,10% %time:~0,8%: %runAppPath%
 ::启动命令和参数
-%runAppPath% worker --route-server-url http://route.oreminepool.top:8080/  --server-url  "public&stake" --threads 12  --worker-wallet-address Yg35XuZENFxEy3JcFa8rFhj2YfuyYK5fxbFeFSeWoRK
+%runAppPath% worker --route-server-url http://route.oreminepool.top:8080/  --server-url  "public&stake"  --worker-wallet-address Yg35XuZENFxEy3JcFa8rFhj2YfuyYK5fxbFeFSeWoRK
 popd
 
 :checkend
