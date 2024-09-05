@@ -41,6 +41,10 @@ pkill -f ore-mine-pool
 save record as csv ,for excel analysis:
 ./ore-mine-pool-linux  monitor   --rpc-ws-url  wss://xxxxxx   --csv_mode
 ```
+## 新版本0.1.6发布：
+
+自建server只需要增加—mine-coal即可开启同时挖COAL
+
 ## 新版本0.1.5发布：
 
 更新客户端和start.sh
