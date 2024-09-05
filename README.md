@@ -37,6 +37,10 @@ save record as csv ,for excel analysis:
 ./ore-mine-pool-linux  monitor   --rpc-ws-url  wss://xxxxxx   --csv_mode
 
 ```
+## 0.1.6 has been released
+
+The self-hosted server only needs to add mine-coal to open and mine COAL at the same time
+
 ## 0.1.5 has been released
 
 Update the client and  start.sh
