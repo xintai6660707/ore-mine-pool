@@ -52,7 +52,7 @@ nohup ./ore-mine-pool-linux server --route  --port 8080 >> server.log 2>&1 &
 如果你充分信任我们 -> 你可以对钱包进行质押ore来获得质押系数，获得更多挖矿奖励。
 
 ### 调优
-1、修改--priority-fee 来调整挖矿gas费用支出，它不应该低于6000，否则会大幅影响上链成功率。
+1、修改--priority-fee 来调整挖矿gas费用支出，它不应该低于13000(在启用--mine--coal的情况下，应该不低于6000)，否则会大幅影响上链成功率。
 
 2、修改--base-jito-tip 来调整jito费用，目前计算规则是 base-jito-tip + 55s后间隔毫秒数 * 2，最大5w。(到达提交阶段后，每秒钟+2000小费)。
 
