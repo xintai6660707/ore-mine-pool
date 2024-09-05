@@ -27,7 +27,7 @@ If you fully trust us -> You can stake ore in the wallet to get a staking coeffi
 
 ### Optimization
 
-1.Modify --priority-fee to adjust the mining gas fee expenditure. It should not be less than 13000, otherwise, it will significantly affect the success rate of on-chain transactions.  
+1.Modify --priority-fee to adjust the mining gas fee expenditure. It should not be less than 6000, otherwise, it will significantly affect the success rate of on-chain transactions.  
 
 2.Modify --base-jito-tip to adjust the jito fee. The current calculation rule is (task difficulty - 14) * 2000 + base-jito-tip.  
 
