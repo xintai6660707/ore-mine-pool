@@ -27,7 +27,8 @@ If you fully trust us -> You can stake ore in the wallet to get a staking coeffi
 
 ### Optimization
 
-1.Modify --priority-fee to adjust the mining gas fee expenditure. It should not be less than 13000, otherwise, it will significantly affect the success rate of on-chain transactions.  
+1.Modify --priority-fee to adjust the mining gas fee expenditure. It should not be less than 13000(If you add --mine-coal, then it should be not less than 6000), otherwise, it will significantly affect 
+the success rate of on-chain transactions.
 
 2.Modify --base-jito-tip to adjust the jito fee. The current calculation rule is (task difficulty - 14) * 2000 + base-jito-tip.  
 
@@ -35,18 +36,22 @@ If you fully trust us -> You can stake ore in the wallet to get a staking coeffi
 
 4.Modify --per-bundle-mine-count to bundle the list of mining wallets, and when it is set to 3, every 3 mining wallets will be sent to the chain as the same transaction. In this way, when there are 15 wallets on the server side, they are grouped by 3 for a total of 5 wallets, which will reduce the competition loss.
 
-5.Wallet quantity: You need at least 2 wallets to enjoy seamless worker computation (one wallet in the result submission phase while the other is in the computation phase). The recommendation is 3-5 wallets, and it should not exceed 5.  
+5.Add --mine-coal so that ORE and COAL will be double mining. The ORE and COAL proof accounts are synchronized at the first startup. If you had ORE stake in your ORE mining wallet before, account synchronization will result in the withdrawal of all ORE stake in your ORE mining wallet to your mining wallet, and you will need to re-stake the ore stake command after synchronization.
 
-6.If you choose to stake and have limited funds, it is recommended to use fewer wallets to concentrate staking and enjoy a higher staking coefficient. Maintain an average difficulty above 28. This way, you will forgo some low-difficulty on-chain transactions below 28, but above 28, you will get a higher staking coefficient.
+6.Wallet quantity: You need at least 2 wallets to enjoy seamless worker computation (one wallet in the result submission phase while the other is in the computation phase). The recommendation is 3-5 wallets, and it should not exceed 5.  
 
-7.The current highest staking user fluctuates between 270-441. To make staking more efficient, it is recommended to stake below 270 per wallet.  
+7.If you choose to stake and have limited funds, it is recommended to use fewer wallets to concentrate staking and enjoy a higher staking coefficient. Maintain an average difficulty above 28. This way, you will forgo some low-difficulty on-chain transactions below 28, but above 28, you will get a higher staking coefficient.
 
-8.The rpc needs to use an rpc provider that has staked sol to use the swQoS rpc service, increasing the speed and success rate of on-chain transactions, such as helius and triton.  
+8.The current highest staking user fluctuates between 270-441. To make staking more efficient, it is recommended to stake below 270 per wallet.  
+
+9.The rpc needs to use an rpc provider that has staked sol to use the swQoS rpc service, increasing the speed and success rate of on-chain transactions, such as helius and triton.  
 
 ### Fees
 
-1.12%
+1.ORE: 12%
 
-2.Miners bear the gas and rpc fees themselves.
+2.COAL: With ORE, the COAL fee is 12% due to our on-chain procedure limiting the minimum expense percentage
+
+3.Miners bear the gas and rpc fees themselves.
 
 If you think the fee is too high, feel free to use our public pool and staking pool, where the staking pool enjoys a 105% return after fees!
