@@ -48,9 +48,9 @@ the success rate of on-chain transactions.
 
 ### Fees
 
-1.ORE: 12%
+1.ORE: 10%
 
-2.COAL: With ORE, the COAL fee is 12% due to our on-chain procedure limiting the minimum expense percentage
+2.COAL: With ORE, the COAL fee is 10% due to our on-chain procedure limiting the minimum expense percentage
 
 3.Miners bear the gas and rpc fees themselves.
 
