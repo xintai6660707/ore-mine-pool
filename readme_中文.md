@@ -20,10 +20,9 @@ ore-mine-pool是为orev2实现的矿池，矿工可以更简单的进行挖矿�
 3. chmod +x start.sh
 4. chmod +x ore-mine-pool-linux
 5. 修改start.sh中的worker-wallet-address为你的钱包地址，确保你的钱包有ORE账户，没有的话买一点点即可自动开通
-6. 如果没有ore钱包地址，可以使用 ./ore-mine-pool-linux create-associated-token --keypair "你的钱包私钥地址" --priority-fee 20000 创建ore关联账户(你有考虑私钥安全，也可以自己创建)
-7. 我们已经支持了同时进行COAL挖矿，确保你收款钱包拥有COAL账户(地址E3yUqBNTZxV8ELvW99oRLC7z4ddbJqqR4NphwrMug9zu)，如果你钱包还有没有COAL账户，购买一点点即可开通COAL账户，将自动开始同时接收COAL奖励。
-8. nohup ./start.sh > start.log 2>&1 & //后台启动worker
-9. tail -f  worker.log //查看worker日志
+6. 我们已经支持了同时进行COAL挖矿，确保你收款钱包拥有COAL账户(地址E3yUqBNTZxV8ELvW99oRLC7z4ddbJqqR4NphwrMug9zu)，如果你钱包还有没有COAL账户，购买一点点即可开通COAL账户，将自动开始同时接收COAL奖励。
+7. nohup ./start.sh > start.log 2>&1 & //后台启动worker
+8. tail -f  worker.log //查看worker日志
 
 
 暂停任务：
@@ -106,7 +105,7 @@ ore-cli提交奖励，需要消耗gas费用，在很多情况，会占用你奖�
 ## 费用
 
 
-pool-fee: 15%            (我们承担gas费用，以及server端维护)
+pool-fee: 13%            (我们承担gas费用，以及server端维护)
 
 ## 链接
 

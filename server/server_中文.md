@@ -72,9 +72,9 @@ nohup ./ore-mine-pool-linux server --route  --port 8080 >> server.log 2>&1 &
 
 ### 费率
 
-1、ORE费用：12%
+1、ORE费用：10%
 
-2、COAL费用：同ORE，由于我们在链上程序限制了最低费用比例，所以COAL费用为12%
+2、COAL费用：同ORE，由于我们在链上程序限制了最低费用比例，所以COAL费用为10%
 
 3、矿工自行承担gas和rpc费用
 
