@@ -96,7 +96,7 @@ In total: 1.54 * 2 * 2 * 2 = 12.32 times efficiency improvement. (Currently, wit
 ## Fees
 
 
-pool-fee: 15% (we cover gas fees and server maintenance)  
+pool-fee: 13% (we cover gas fees and server maintenance)  
 
 
 
