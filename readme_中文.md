@@ -21,14 +21,17 @@ ore-mine-pool是为orev2实现的矿池，矿工可以更简单的进行挖矿�
 4. chmod +x ore-mine-pool-linux
 5. 修改start.sh中的worker-wallet-address为你的钱包地址，确保你的钱包有ORE账户，没有的话买一点点即可自动开通
 6. 我们已经支持了同时进行COAL挖矿，确保你收款钱包拥有COAL账户(地址E3yUqBNTZxV8ELvW99oRLC7z4ddbJqqR4NphwrMug9zu)，如果你钱包还有没有COAL账户，购买一点点即可开通COAL账户，将自动开始同时接收COAL奖励。
-7. nohup ./start.sh > start.log 2>&1 & //后台启动worker
-8. tail -f  worker.log //查看worker日志
+7. 默认机器名是你主机的hostname，在start.sh ./ore-mine-pool-linux worker 后面添加参数修改 --alias 机器名
+8. nohup ./start.sh > start.log 2>&1 & //后台启动worker
+9. tail -f  worker.log //查看worker日志
 
 
 暂停任务：
 pkill -f start.sh
 pkill -f ore-mine-pool
 
+查看机器在线使用状态：
+http://route.oreminepool.top:8080/wallet_stats/钱包地址
 
 监控solana链上ore-mine-pool所有记录:
 ./ore-mine-pool-linux  monitor   --rpc-ws-url  wss://xxxxxx
@@ -40,6 +43,11 @@ pkill -f ore-mine-pool
 save record as csv ,for excel analysis:
 ./ore-mine-pool-linux  monitor   --rpc-ws-url  wss://xxxxxx   --csv_mode
 ```
+## 新版本0.1.7发布：
+新增连接统计，你可以访问http://route.oreminepool.top:8080/wallet_stats/钱包地址 查看你的机器使用状态。例如：http://route.oreminepool.top:8080/wallet_stats/Feei2iwqp9Adcyte1F5XnKzGTFL1VDg4VyiypvoeiJyJ
+如果你使用公开池，你需要更新woker。
+如果你使用自建server，你需要更新你自己的route server、server、worker。如果使用了自建route server，修改url为自建route server的url地址。否则使用自建server的url地址。
+
 ## 新版本0.1.6发布：
 
 自建server只需要增加—mine-coal即可开启同时挖COAL
