@@ -44,6 +44,8 @@ start_process(){
 
 start_process
 
+trap "trap - SIGTERM && kill -- -$$" SIGINT SIGTERM EXIT
+
 while true; do
     num=`ps aux | grep -w ore-mine-pool-linux | grep -v grep |wc -l`
     if [ "${num}" -lt "$PROCESSES" ];then
