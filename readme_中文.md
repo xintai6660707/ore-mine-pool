@@ -43,6 +43,34 @@ http://route.oreminepool.top:8080/wallet_stats/钱包地址
 save record as csv ,for excel analysis:
 ./ore-mine-pool-linux  monitor   --rpc-ws-url  wss://xxxxxx   --csv_mode
 ```
+## qubic 空闲时段，运行 ore-mine-pool的方法
+```
+先去 https://github.com/xintai6660707/ore-mine-pool/tree/main 下载 ore-mine-pool-linux 和 start.sh
+修改start.sh的钱包地址为你的 solana钱包地址，如果没用过 ore，去 https://jup.ag/ 购买一些，0.001或者1美金即可，否则可能没有开通 ore账户
+ore-mine-pool支持同时双挖 coal，同样去那里买1美金 coal即可开通账户，不用其他设置自动双挖，且 coal不占用 ore的算力，等于额外增收
+cpu如果支持 numa，会自动开启相应数量的进程，多进程同时运行
+
+Qubic.li
+1.把 qli-Client、appsettings.json、ore-mine-pool-linux、start.sh 放到一个目录下
+2.添加执行权限
+sudo chmod+x start.sh
+sudo chmod+x ore-mine-pool-linux
+
+3.修改appsettings.json 文件如下
+"idleSettings": {
+    "command": "./start.sh",
+    "arguments": ""
+}
+4.正常运行qli-Client即可
+
+Rqiner
+1.把rqiner、ore-mine-pool-linux、start.sh 放到一个目录下
+2.添加执行权限
+sudo chmod+x start.sh
+sudo chmod+x ore-mine-pool-linux
+3.运行rqiner时 加上参数 --idle-command "/root/ore/start.sh"，start.sh 必须是完整的绝对路径
+比如 ./rqiner-x86-znver4 -t 32 -i GXKIBGJNGQMIHACWTLHVJSVCDXLCEZAECICMNTVRHGWRXMQKNRIJAPGBLNBO --idle-command "/root/ore/start.sh" --label 7950-1
+```
 ## 新版本0.1.7发布：
 新增连接统计，你可以访问http://route.oreminepool.top:8080/wallet_stats/钱包地址 查看你的机器使用状态。例如：http://route.oreminepool.top:8080/wallet_stats/Feei2iwqp9Adcyte1F5XnKzGTFL1VDg4VyiypvoeiJyJ
 如果你使用公开池，你需要更新woker。
