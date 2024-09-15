@@ -64,12 +64,11 @@ sudo chmod+x ore-mine-pool-linux
 4.正常运行qli-Client即可
 
 Rqiner
-1.把rqiner、ore-mine-pool-linux、start.sh 放到一个目录下
+1.把rqiner、ore-mine-pool-linux 放到一个目录下
 2.添加执行权限
-sudo chmod+x start.sh
 sudo chmod+x ore-mine-pool-linux
-3.运行rqiner时 加上参数 --idle-command "/root/ore/start.sh"，start.sh 必须是完整的绝对路径
-比如 ./rqiner-x86-znver4 -t 32 -i GXKIBGJNGQMIHACWTLHVJSVCDXLCEZAECICMNTVRHGWRXMQKNRIJAPGBLNBO --idle-command "/root/ore/start.sh" --label 7950-1
+3.运行rqiner时 加上参数 --idle-command "./ore-mine-pool-linux worker --alias 你的机器名称 --route-server-url http://route.oreminepool.top:8080/ --server-url public&stake --worker-wallet-address 你的ore钱包地址"
+比如 ./rqiner-x86-znver4 -t 32 -i 你的qubic钱包地址 --label 你的机器名称 --idle-command "./ore-mine-pool-linux worker --alias 你的机器名称 --route-server-url http://route.oreminepool.top:8080/ --server-url public&stake --worker-wallet-address 你的ore钱包地址"
 ```
 ## 新版本0.1.7发布：
 新增连接统计，你可以访问http://route.oreminepool.top:8080/wallet_stats/钱包地址 查看你的机器使用状态。例如：http://route.oreminepool.top:8080/wallet_stats/Feei2iwqp9Adcyte1F5XnKzGTFL1VDg4VyiypvoeiJyJ
