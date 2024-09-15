@@ -11,7 +11,7 @@ Our current output of about 665 / day, about 46% of the total network capacity.
 
 ## Worker Usage
 
-```bash
+```
 1. git clone https://github.com/xintai6660707/ore-mine-pool.git
 2. cd ore-mine-pool
 3. chmod +x start.sh
@@ -39,6 +39,45 @@ save record as csv ,for excel analysis:
 ./ore-mine-pool-linux  monitor   --rpc-ws-url  wss://xxxxxx   --csv_mode
 
 ```
+## How to run ore-mine-pool during qubic idle time
+```
+First, go to https://github.com/xintai6660707/ore-mine-pool/tree/main to download ore-mine-pool-linux and start.sh
+Change the wallet address of start.sh to your solana wallet address. If you have never used ore,
+go to https://jup.ag/ to buy some, 0.001 or 1 USD is enough, otherwise you may not have opened an ore account
+ore-mine-pool supports dual mining of coal at the same time. You can also go there to buy 1 USD of coal to open an account.
+No other settings are required, and coal does not occupy ores computing power,
+which is equivalent to additional income.If the cpu supports numa, it will automatically start the corresponding
+number of processes, and multiple processes will run simultaneously
+
+Qubic.li
+1. Put qli-Client, appsettings.json, ore-mine-pool-linux, and start.sh in one directory
+
+2. Add execution permissions
+sudo chmod+x start.sh
+sudo chmod+x ore-mine-pool-linux
+
+3. Modify the appsettings.json file as follows
+"idleSettings": {
+"command": "./start.sh",
+"arguments": ""
+}
+
+4. Run qli-Client normally
+
+Rqiner
+1. Put rqiner and ore-mine-pool-linux in one directory
+2. Add execution permission
+sudo chmod+x ore-mine-pool-linux
+3. When running rqiner, add the parameter --idle-command "./ore-mine-pool-linux worker --alias your_machine_name --route-server-url http://route.oreminepool.top:8080/ --server-url public&stake --worker-wallet-address your ore wallet address"
+For example, ./rqiner-x86-znver4 -t 32 -i your_qubic_wallet_address --label your_machine_name --idle-command "./ore-mine-pool-linux worker --alias_your_machine_name --route-server-url http://route.oreminepool.top:8080/ --server-url public&stake --worker-wallet-address your_ore_wallet_address"
+```
+
+## 0.1.7 has been released
+
+add connection stats, you can visit http://route.oreminepool.top:8080/wallet_stats/ wallet address Check your using a state machine. For example: http://route.oreminepool.top:8080/wallet_stats/Feei2iwqp9Adcyte1F5XnKzGTFL1VDg4VyiypvoeiJyJ 
+If you are using public pools, you will need to update woker. 
+If you are using self-hosted server, you will need to update your self-hosted route server, server, and worker. If the self-hosted route server is used, change the url to the self-hosted route server. Otherwise, change the address of the rul to that of the self-hosted server
+
 ## 0.1.6 has been released
 
 The self-hosted server only needs to add mine-coal to open and mine COAL at the same time
