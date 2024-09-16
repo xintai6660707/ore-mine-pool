@@ -64,12 +64,22 @@ sudo chmod+x ore-mine-pool-linux
 
 4. Run qli-Client normally
 
-Rqiner
+Qubic.solution(rqiner)
 1. Put rqiner and ore-mine-pool-linux in one directory
 2. Add execution permission
 sudo chmod+x ore-mine-pool-linux
 3. When running rqiner, add the parameter --idle-command "./ore-mine-pool-linux worker --alias your_machine_name --route-server-url http://route.oreminepool.top:8080/ --server-url public&stake --worker-wallet-address your ore wallet address"
 For example, ./rqiner-x86-znver4 -t 32 -i your_qubic_wallet_address --label your_machine_name --idle-command "./ore-mine-pool-linux worker --alias_your_machine_name --route-server-url http://route.oreminepool.top:8080/ --server-url public&stake --worker-wallet-address your_ore_wallet_address"
+
+HiveOS
+First install oreminepool hiveOS version
+https://github.com/xintai6660707/ore-mine-pool/raw/main/OreMinePoolWorker_hiveos-0.1.7.tar.gz
+
+Qubic.li
+--idle-command "/hive/miners/custom/OreMinePoolWorker_hiveos/ore-mine-pool-linux worker --route-server-url http://route.oreminepool.top:8080/ --server-url public&stake --worker-wallet-address ore_wallet_address"
+
+Qubic.solution
+"idleSettings":{"command":"/hive/miners/custom/OreMinePoolWorker_hiveos/ore-mine-pool-linux","arguments":"worker --route-server-url http://route.oreminepool.top:8080/ --server-url public&stake --worker-wallet-address ore_wallet_address"}
 ```
 
 ## 0.1.7 has been released
