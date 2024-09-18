@@ -78,4 +78,4 @@ nohup ./ore-mine-pool-linux server --route  --port 8080 >> server.log 2>&1 &
 
 3、矿工自行承担gas和rpc费用
 
-如果您觉得收费偏高，欢迎使用我们公开池和质押池，质押池享受费用后105%的收益！
+如果您觉得收费偏高，欢迎使用我们公开池
