@@ -10,6 +10,8 @@ ore-mine-pool是为orev2实现的矿池，矿工可以更简单的进行挖矿�
 
 [dune](https://dune.com/oreminepool/ore-mine-pool-dashboard)
 
+[网站](https://oreminepool.top/)
+
 [文档](https://minership.gitbook.io/ore-mine-pool-tutorial)
 
 ## Worker 使用方法
