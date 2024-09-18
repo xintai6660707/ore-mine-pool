@@ -54,4 +54,4 @@ the success rate of on-chain transactions.
 
 3.Miners bear the gas and rpc fees themselves.
 
-If you think the fee is too high, feel free to use our public pool and staking pool, where the staking pool enjoys a 105% return after fees!
+If you think the fee is too high, feel free to use our public pool and staking pool.
