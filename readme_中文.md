@@ -67,7 +67,7 @@ Qubic.solution
 1.把rqiner、ore-mine-pool-linux 放到一个目录下
 2.添加执行权限
 sudo chmod+x ore-mine-pool-linux
-3.运行rqiner时 加上参数 --idle-command "./ore-mine-pool-linux worker --alias 你的机器名称 --route-server-url http://route.oreminepool.top:8080/ --server-url publice --worker-wallet-address 你的ore钱包地址"
+3.运行rqiner时 加上参数 --idle-command "./ore-mine-pool-linux worker --alias 你的机器名称 --route-server-url http://route.oreminepool.top:8080/ --server-url public --worker-wallet-address 你的ore钱包地址"
 比如 ./rqiner-x86-znver4 -t 32 -i 你的qubic钱包地址 --label 你的机器名称 --idle-command "./ore-mine-pool-linux worker --alias 你的机器名称 --route-server-url http://route.oreminepool.top:8080/ --server-url public --worker-wallet-address 你的ore钱包地址"
 
 HiveOS
@@ -77,10 +77,9 @@ https://github.com/xintai6660707/ore-mine-pool/raw/main/OreMinePoolWorker_hiveos
 https://ghp.ci/https://github.com/xintai6660707/ore-mine-pool/raw/main/OreMinePoolWorker_hiveos-0.1.7.tar.gz
 
 Qubic.li参数
---idle-command "/hive/miners/custom/OreMinePoolWorker_hiveos/ore-mine-pool-linux worker --route-server-url http://route.oreminepool.top:8080/ --server-url public --worker-wallet-address ore钱包地址"
-
-Qubic.solutions参数
 "idleSettings":{"command":"/hive/miners/custom/OreMinePoolWorker_hiveos/ore-mine-pool-linux","arguments":"worker --route-server-url http://route.oreminepool.top:8080/ --server-url public--worker-wallet-address ore钱包地址"}
+Qubic.solutions参数
+--idle-command "/hive/miners/custom/OreMinePoolWorker_hiveos/ore-mine-pool-linux worker --route-server-url http://route.oreminepool.top:8080/ --server-url public --worker-wallet-address ore钱包地址"
 
 
 ```
