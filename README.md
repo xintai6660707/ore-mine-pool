@@ -124,7 +124,7 @@ In ore, there are 8 buses (each with 1/8 of the reward capacity). ore-cli submit
 
 ## Staking rewards
 
-In orev2, miners with s receive a coefficient increase of 1-2 times for reward submissions. When using ore-cli, due to low s, the coefficient is close to 1. ore-mine-pool-worker collects miner fees and s them, resulting in increased earnings with higher s, approaching a 2 times efficiency improvement.  
+In orev2, miners with stakes receive a coefficient increase of 1-2 times for reward submissions. When using ore-cli, due to low stakes, the coefficient is close to 1. ore-mine-pool-worker collects miner fees and stakes them, resulting in increased earnings with higher stakes, approaching a 2 times efficiency improvement.  
 
 ## No gas fees
 
