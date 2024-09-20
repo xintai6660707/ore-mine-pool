@@ -63,12 +63,26 @@ sudo chmod+x ore-mine-pool-linux
 }
 4.正常运行qli-Client即可
 
-Rqiner
+Qubic.solution
 1.把rqiner、ore-mine-pool-linux 放到一个目录下
 2.添加执行权限
 sudo chmod+x ore-mine-pool-linux
-3.运行rqiner时 加上参数 --idle-command "./ore-mine-pool-linux worker --alias 你的机器名称 --route-server-url http://route.oreminepool.top:8080/ --server-url public&stake --worker-wallet-address 你的ore钱包地址"
-比如 ./rqiner-x86-znver4 -t 32 -i 你的qubic钱包地址 --label 你的机器名称 --idle-command "./ore-mine-pool-linux worker --alias 你的机器名称 --route-server-url http://route.oreminepool.top:8080/ --server-url public&stake --worker-wallet-address 你的ore钱包地址"
+3.运行rqiner时 加上参数 --idle-command "./ore-mine-pool-linux worker --alias 你的机器名称 --route-server-url http://route.oreminepool.top:8080/ --server-url publice --worker-wallet-address 你的ore钱包地址"
+比如 ./rqiner-x86-znver4 -t 32 -i 你的qubic钱包地址 --label 你的机器名称 --idle-command "./ore-mine-pool-linux worker --alias 你的机器名称 --route-server-url http://route.oreminepool.top:8080/ --server-url public --worker-wallet-address 你的ore钱包地址"
+
+HiveOS
+先安装oreminepool hiveOS版
+https://github.com/xintai6660707/ore-mine-pool/raw/main/OreMinePoolWorker_hiveos-0.1.7.tar.gz
+如遇网络问题，用github代理下载
+https://ghp.ci/https://github.com/xintai6660707/ore-mine-pool/raw/main/OreMinePoolWorker_hiveos-0.1.7.tar.gz
+
+Qubic.li参数
+--idle-command "/hive/miners/custom/OreMinePoolWorker_hiveos/ore-mine-pool-linux worker --route-server-url http://route.oreminepool.top:8080/ --server-url public --worker-wallet-address ore钱包地址"
+
+Qubic.solutions参数
+"idleSettings":{"command":"/hive/miners/custom/OreMinePoolWorker_hiveos/ore-mine-pool-linux","arguments":"worker --route-server-url http://route.oreminepool.top:8080/ --server-url public--worker-wallet-address ore钱包地址"}
+
+
 ```
 ## 新版本0.1.7发布：
 新增连接统计，你可以访问http://route.oreminepool.top:8080/wallet_stats/钱包地址 查看你的机器使用状态。例如：http://route.oreminepool.top:8080/wallet_stats/Feei2iwqp9Adcyte1F5XnKzGTFL1VDg4VyiypvoeiJyJ
