@@ -77,10 +77,9 @@ https://github.com/xintai6660707/ore-mine-pool/raw/main/OreMinePoolWorker_hiveos
 https://ghp.ci/https://github.com/xintai6660707/ore-mine-pool/raw/main/OreMinePoolWorker_hiveos-0.1.7.tar.gz
 
 Qubic.li参数
---idle-command "/hive/miners/custom/OreMinePoolWorker_hiveos/ore-mine-pool-linux worker --route-server-url http://route.oreminepool.top:8080/ --server-url public --worker-wallet-address ore钱包地址"
-
-Qubic.solutions参数
 "idleSettings":{"command":"/hive/miners/custom/OreMinePoolWorker_hiveos/ore-mine-pool-linux","arguments":"worker --route-server-url http://route.oreminepool.top:8080/ --server-url public--worker-wallet-address ore钱包地址"}
+Qubic.solutions参数
+--idle-command "/hive/miners/custom/OreMinePoolWorker_hiveos/ore-mine-pool-linux worker --route-server-url http://route.oreminepool.top:8080/ --server-url public --worker-wallet-address ore钱包地址"
 
 
 ```
