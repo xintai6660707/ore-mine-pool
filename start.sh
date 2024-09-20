@@ -3,10 +3,16 @@
 # 设置钱包地址变量
 WORKER_WALLET_ADDRESS="Yg35XuZENFxEy3JcFa8rFhj2YfuyYK5fxbFeFSeWoRK"
 
-# 获取NUMA节点的数量
-NUMA_NODES=$(lscpu | grep "NUMA node(s)" | awk '{print $3}')
 
-if [[ $NUMA_NODES ]]; then
+if ! type numactl >/dev/null 2>&1; then
+    echo "Install numactl"
+    sudo apt install -y numactl
+fi
+
+# 获取NUMA节点的数量
+NUMA_NODES=$(numactl -H |grep available |awk '{print $2}')
+
+if [[ $NUMA_NODES ]]&&[[ $NUMA_NODES != 'NUMA' ]]; then
     PROCESSES=$NUMA_NODES
 else
     PROCESSES=1
@@ -28,11 +34,7 @@ start_process_normal() {
 
 # 如果支持NUMA，使用numactl
 start_process(){
-    if [[ $NUMA_NODES ]]; then
-        if ! type numactl >/dev/null 2>&1; then
-            echo "Install numactl"
-            sudo apt install -y numactl
-        fi
+    if [[ $NUMA_NODES ]]&&[[ $NUMA_NODES != 'NUMA' ]]; then
         echo "Use numactl"
         for (( i=0; i<$NUMA_NODES; i++ )); do
             start_process_numa $i
