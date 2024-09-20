@@ -12,7 +12,7 @@ else
     PROCESSES=1
 fi
 
-COMMAND_BASE="./ore-mine-pool-linux worker --route-server-url http://route.oreminepool.top:8080/ --server-url 'public&stake' --worker-wallet-address ${WORKER_WALLET_ADDRESS} >> worker.log 2>&1"
+COMMAND_BASE="./ore-mine-pool-linux worker --route-server-url http://route.oreminepool.top:8080/ --server-url public --worker-wallet-address ${WORKER_WALLET_ADDRESS} >> worker.log 2>&1"
 
 # 启动进程的函数，绑定到指定的NUMA节点
 start_process_numa() {
