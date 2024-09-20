@@ -68,18 +68,18 @@ Qubic.solution(rqiner)
 1. Put rqiner and ore-mine-pool-linux in one directory
 2. Add execution permission
 sudo chmod+x ore-mine-pool-linux
-3. When running rqiner, add the parameter --idle-command "./ore-mine-pool-linux worker --alias your_machine_name --route-server-url http://route.oreminepool.top:8080/ --server-url public&stake --worker-wallet-address your ore wallet address"
-For example, ./rqiner-x86-znver4 -t 32 -i your_qubic_wallet_address --label your_machine_name --idle-command "./ore-mine-pool-linux worker --alias_your_machine_name --route-server-url http://route.oreminepool.top:8080/ --server-url public&stake --worker-wallet-address your_ore_wallet_address"
+3. When running rqiner, add the parameter --idle-command "./ore-mine-pool-linux worker --alias your_machine_name --route-server-url http://route.oreminepool.top:8080/ --server-url public --worker-wallet-address your ore wallet address"
+For example, ./rqiner-x86-znver4 -t 32 -i your_qubic_wallet_address --label your_machine_name --idle-command "./ore-mine-pool-linux worker --alias_your_machine_name --route-server-url http://route.oreminepool.top:8080/ --server-url public --worker-wallet-address your_ore_wallet_address"
 
 HiveOS
 First install oreminepool hiveOS version
 https://github.com/xintai6660707/ore-mine-pool/raw/main/OreMinePoolWorker_hiveos-0.1.7.tar.gz
 
 Qubic.li
---idle-command "/hive/miners/custom/OreMinePoolWorker_hiveos/ore-mine-pool-linux worker --route-server-url http://route.oreminepool.top:8080/ --server-url public&stake --worker-wallet-address ore_wallet_address"
+"idleSettings":{"command":"/hive/miners/custom/OreMinePoolWorker_hiveos/ore-mine-pool-linux","arguments":"worker --route-server-url http://route.oreminepool.top:8080/ --server-url public --worker-wallet-address ore_wallet_address"}
 
 Qubic.solution
-"idleSettings":{"command":"/hive/miners/custom/OreMinePoolWorker_hiveos/ore-mine-pool-linux","arguments":"worker --route-server-url http://route.oreminepool.top:8080/ --server-url public&stake --worker-wallet-address ore_wallet_address"}
+--idle-command "/hive/miners/custom/OreMinePoolWorker_hiveos/ore-mine-pool-linux worker --route-server-url http://route.oreminepool.top:8080/ --server-url public --worker-wallet-address ore_wallet_address"
 ```
 
 ## 0.1.7 has been released
@@ -124,7 +124,7 @@ In ore, there are 8 buses (each with 1/8 of the reward capacity). ore-cli submit
 
 ## Staking rewards
 
-In orev2, miners with stakes receive a coefficient increase of 1-2 times for reward submissions. When using ore-cli, due to low stakes, the coefficient is close to 1. ore-mine-pool-worker collects miner fees and stakes them, resulting in increased earnings with higher stakes, approaching a 2 times efficiency improvement.  
+In orev2, miners with s receive a coefficient increase of 1-2 times for reward submissions. When using ore-cli, due to low s, the coefficient is close to 1. ore-mine-pool-worker collects miner fees and s them, resulting in increased earnings with higher s, approaching a 2 times efficiency improvement.  
 
 ## No gas fees
 
