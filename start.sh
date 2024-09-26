@@ -48,7 +48,7 @@ start_process
 
 trap "trap - SIGTERM && kill -- -$$" SIGINT SIGTERM EXIT
 
-sleep 10
+sleep 5
 
 while true; do
     num=`ps aux | grep -w ore-mine-pool-linux | grep -v grep |wc -l`
