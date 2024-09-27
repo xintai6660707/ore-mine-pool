@@ -22,8 +22,9 @@ ore-mine-pool是为orev2实现的矿池，矿工可以更简单的进行挖矿�
 5. 修改start.sh中的worker-wallet-address为你的钱包地址，确保你的钱包有ORE账户，没有的话买一点点即可自动开通
 6. 我们已经支持了同时进行COAL挖矿，确保你收款钱包拥有COAL账户(地址E3yUqBNTZxV8ELvW99oRLC7z4ddbJqqR4NphwrMug9zu)，如果你钱包还有没有COAL账户，购买一点点即可开通COAL账户，将自动开始同时接收COAL奖励。
 7. 默认机器名是你主机的hostname，在start.sh ./ore-mine-pool-linux worker 后面添加参数修改 --alias 机器名
-8. nohup ./start.sh > start.log 2>&1 & //后台启动worker
-9. tail -f  worker.log //查看worker日志
+8. 默认开启全部线程，如果需要修改单个numa的线程数，添加 --threads 你的线程数
+9. nohup ./start.sh > start.log 2>&1 & //后台启动worker
+10. tail -f  worker.log //查看worker日志
 
 
 暂停任务：
@@ -32,6 +33,7 @@ pkill -f ore-mine-pool
 
 查看机器在线使用状态：
 http://route.oreminepool.top:8080/wallet_stats/钱包地址
+https://oreminepool.top/machines/钱包地址
 
 监控solana链上ore-mine-pool所有记录:
 ./ore-mine-pool-linux  monitor   --rpc-ws-url  wss://xxxxxx
