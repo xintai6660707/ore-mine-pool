@@ -84,6 +84,18 @@ Qubic.solution
 --idle-command "/hive/miners/custom/OreMinePoolWorker_hiveos/ore-mine-pool-linux worker --route-server-url http://route.oreminepool.top:8080/ --server-url public --worker-wallet-address ore_wallet_address"
 ```
 
+## 0.1.8 has been released
+
+server update: 
+1, the number of wallets supported by a single server is no longer limited, but it is not recommended to exceed 50 
+2, Add dynamic gas cost support, use: start command increase --dynamic-gas. When this parameter is used, the --priority-fee and --base-jito-tip parameters are overridden 
+
+worker update: 
+Optimized the computing power reporting mechanism, and the computing power statistics on the website will be more stable
+The calculation time of a single task will be considered as cutoff_time. At least 5s will be required to report it. This will reduce the challenge mismatch error in a poor network environment
+threads parameter support is restored
+Modified the default values of some parameters to simplify the public pool startup command
+
 ## 0.1.7 has been released
 
 add connection stats, you can visit http://route.oreminepool.top:8080/wallet_stats/ wallet address Check your using a state machine. For example: http://route.oreminepool.top:8080/wallet_stats/Feei2iwqp9Adcyte1F5XnKzGTFL1VDg4VyiypvoeiJyJ 
