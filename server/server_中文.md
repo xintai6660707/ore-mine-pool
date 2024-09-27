@@ -56,6 +56,8 @@ nohup ./ore-mine-pool-linux server --route  --port 8080 >> server.log 2>&1 &
 
 2、修改--base-jito-tip 来调整jito费用，目前计算规则是 base-jito-tip + 55s后间隔毫秒数 * 2，最大5w。(到达提交阶段后，每秒钟+2000小费)。
 
+3、增加 --dynamic-gas 来支持动态gas，使用此参数后，--priority-fee  和 --base-jito-tip 参数将被覆盖
+
 3、修改--min-difficulty 来调整最低难度要求，低于这个难度的hash，客户端将不再上报。
 
 4、修改--per-bundle-mine-count 将挖矿钱包列表做捆绑，当他设置为3时，会将挖矿钱包每3个作为同一笔交易发送上链。这样当server端有15个钱包时，他们被3个为一组，共5组，这样会降低竞争损失。
@@ -66,9 +68,7 @@ nohup ./ore-mine-pool-linux server --route  --port 8080 >> server.log 2>&1 &
 
 7、如果你选择质押，又资金有限，建议使用更少的钱包来集中质押，享受更高的质押系数。维持平均难度28以上。这样你会放弃一些低难度上链(如28以下)，但是28以上会获得更高的质押系数。
 
-8、当前最高质押用户在270-441之间变动，为了使质押更有效率，建议单个钱包质押在270以下。
-
-9、rpc需要使用进行了sol质押的rpc供应商，以便使用支持[swQoS](https://www.helius.dev/blog/stake-weighted-quality-of-service-everything-you-need-to-know)的rpc服务，增加上链速度与成功率。如helius、triton。
+8、rpc需要使用进行了sol质押的rpc供应商，以便使用支持[swQoS](https://www.helius.dev/blog/stake-weighted-quality-of-service-everything-you-need-to-know)的rpc服务，增加上链速度与成功率。如helius、triton。
 
 ### 费率
 
