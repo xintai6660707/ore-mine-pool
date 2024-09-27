@@ -19,8 +19,9 @@ Our current output of about 665 / day, about 46% of the total network capacity.
 5. Modify the worker-wallet-address in start.sh to your wallet address and ensure the wallet has the corresponding ore AssociatedToken address. if there is no ORE to your wallet account, purchase a little.
 6. We have supported simultaneous COAL mining,make sure your payment wallet with COAL accounts E3yUqBNTZxV8ELvW99oRLC7z4ddbJqqR4NphwrMug9zu (address), if there is no COAL to your wallet account, purchase a little. will automatically start receiving COAL rewards at the same time
 7. The default machine name is your hostname. Add the parameter --alias your_new_name to the end of start.sh ./ore-mine-pool-linux worker to modify the machine name.
-8. nohup ./start.sh > start.log 2>&1 & // Start the worker in the background
-9. tail -f worker.log // View worker logs
+8. The default threads is your max threads of cpu supported, if you want change threads per numa, add parameter --threads YOUR_THREADS
+9. nohup ./start.sh > start.log 2>&1 & // Start the worker in the background
+10. tail -f worker.log // View worker logs
 
 To pause the task:
 pkill -f start.sh
@@ -28,6 +29,7 @@ pkill -f ore-mine-pool
 
 Check the online status of the machine:
 http://route.oreminepool.top:8080/wallet_stats/your_wallet_address
+https://oreminepool.top/machines/your_wallet_address
 
 Monitor all program record use:
 ./ore-mine-pool-linux  monitor   --rpc-ws-url  wss://xxxxxx
