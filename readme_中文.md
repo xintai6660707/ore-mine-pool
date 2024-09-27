@@ -85,6 +85,16 @@ Qubic.solutions参数
 
 
 ```
+## 0.1.8 发布：
+server 更新:
+1、单个server支持钱包数量不再有限制，但是不建议超过50个
+2、增加动态gas费用支持，使用方式：启动命令增加 --dynamic-gas。使用此参数后，--priority-fee  和 --base-jito-tip 参数将被覆盖
+worker 更新:
+1、优化了算力上报机制，网站上算力统计会更稳定
+2、单个task计算时间会视任务cutoff_time，最少留5s种上报，会降低较差网络环境下的challenge mismatch错误
+3、恢复了threads参数支持
+4、修正了一些参数默认值，简化public池启动命令
+
 ## 新版本0.1.7发布：
 新增连接统计，你可以访问http://route.oreminepool.top:8080/wallet_stats/钱包地址 查看你的机器使用状态。例如：http://route.oreminepool.top:8080/wallet_stats/Feei2iwqp9Adcyte1F5XnKzGTFL1VDg4VyiypvoeiJyJ
 如果你使用公开池，你需要更新woker。
