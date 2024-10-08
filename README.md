@@ -83,28 +83,6 @@ Qubic.li
 Qubic.solution
 --idle-command "/hive/miners/custom/OreMinePoolWorker_hiveos/ore-mine-pool-linux worker --route-server-url http://route.oreminepool.top:8080/ --server-url public --worker-wallet-address ore_wallet_address"
 ```
-
-## 0.1.7 has been released
-
-add connection stats, you can visit http://route.oreminepool.top:8080/wallet_stats/ wallet address Check your using a state machine. For example: http://route.oreminepool.top:8080/wallet_stats/Feei2iwqp9Adcyte1F5XnKzGTFL1VDg4VyiypvoeiJyJ 
-If you are using public pools, you will need to update woker. 
-If you are using self-hosted server, you will need to update your self-hosted route server, server, and worker. If the self-hosted route server is used, change the url to the self-hosted route server. Otherwise, change the address of the rul to that of the self-hosted server
-
-## 0.1.6 has been released
-
-The self-hosted server only needs to add mine-coal to open and mine COAL at the same time
-
-## 0.1.5 has been released
-
-Update the client and  start.sh
-
-Bind core and use numa. If you don't perform as well as the previous version, you can try version 0.1.4 first.
-
-## 0.1.3 has been released
-
-it just adds stability to the client, if you have stability issues with it, then you need to update.
-
-
 ## Working Principle
 
 
@@ -150,7 +128,7 @@ In total: 1.54 * 2 * 2 * 2 = 12.32 times efficiency improvement. (Currently, wit
 ## Fees
 
 
-pool-fee: 13% (we cover gas fees and server maintenance)  
+pool-fee: 15% (we cover gas fees and server maintenance)  
 
 
 
@@ -160,16 +138,38 @@ ore-mine-pool on-chain program address: [Feei2iwqp9Adcyte1F5XnKzGTFL1VDg4Vyiypvo
 program-fee account: [link](https://solscan.io/account/4756i3S8EPsTvKjVvUaCbP9JF8JpjQW7AmXEZnGeZDhp)
 
 
-## TODO
+## 0.1.9 has been released
 
-Windows version support(done)
+This update is for linux x86 only. Optimized some hoe performance, it is recommended to update as much as possible.
 
-Browser support
+## 0.1.8 has been released
 
-Worker mining earnings subscription
+server update: 
+1, the number of wallets supported by a single server is no longer limited, but it is not recommended to exceed 50 
+2, Add dynamic gas cost support, use: start command increase --dynamic-gas. When this parameter is used, the --priority-fee and --base-jito-tip parameters are overridden 
 
-Multi-server fault tolerance, switch to another server in case of failure(done)
+worker update: 
+Optimized the computing power reporting mechanism, and the computing power statistics on the website will be more stable
+The calculation time of a single task will be considered as cutoff_time. At least 5s will be required to report it. This will reduce the challenge mismatch error in a poor network environment
+threads parameter support is restored
+Modified the default values of some parameters to simplify the public pool startup command
 
-On-chain program outputs the hash of the current task submission, allowing users to verify no fraudulent behavior(done)
+## 0.1.7 has been released
 
-Dune charts(done)
+add connection stats, you can visit http://route.oreminepool.top:8080/wallet_stats/ wallet address Check your using a state machine. For example: http://route.oreminepool.top:8080/wallet_stats/Feei2iwqp9Adcyte1F5XnKzGTFL1VDg4VyiypvoeiJyJ 
+If you are using public pools, you will need to update woker. 
+If you are using self-hosted server, you will need to update your self-hosted route server, server, and worker. If the self-hosted route server is used, change the url to the self-hosted route server. Otherwise, change the address of the rul to that of the self-hosted server
+
+## 0.1.6 has been released
+
+The self-hosted server only needs to add mine-coal to open and mine COAL at the same time
+
+## 0.1.5 has been released
+
+Update the client and  start.sh
+
+Bind core and use numa. If you don't perform as well as the previous version, you can try version 0.1.4 first.
+
+## 0.1.3 has been released
+
+it just adds stability to the client, if you have stability issues with it, then you need to update.

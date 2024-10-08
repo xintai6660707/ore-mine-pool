@@ -85,31 +85,6 @@ Qubic.solutions参数
 
 
 ```
-## 新版本0.1.7发布：
-新增连接统计，你可以访问http://route.oreminepool.top:8080/wallet_stats/钱包地址 查看你的机器使用状态。例如：http://route.oreminepool.top:8080/wallet_stats/Feei2iwqp9Adcyte1F5XnKzGTFL1VDg4VyiypvoeiJyJ
-如果你使用公开池，你需要更新woker。
-如果你使用自建server，你需要更新你自己的route server、server、worker。如果使用了自建route server，修改url为自建route server的url地址。否则使用自建server的url地址。
-
-## 新版本0.1.6发布：
-
-自建server只需要增加—mine-coal即可开启同时挖COAL
-
-## 新版本0.1.5发布：
-
-更新客户端和start.sh
-
-绑定核心和使用numa。如果你使用表现不如之前版本，可以先使用0.1.4版本。
-
-## 新版本0.1.3发布：
-
-它只是增加了客户端的稳定性，如果你使用时有稳定性问题，那么你才需要更新。
-
-## 新版本0.1.2发布：
-
-1、增加了bundle批量mine功能，在server端，新增参数--per-bundle-mine-count。这个参数会将挖矿钱包列表做捆绑，当他设置为3时，会将挖矿钱包每3个作为同一笔交易发送上链。这样当server端有15个钱包时，他们被3个为一组，共5组，这样会降低竞争损失。
-
-2、jito小费计算方式更新，修改为--base-jito-tip + 55s后间隔毫秒数 * 2，最大5w。(到达提交阶段后，每秒钟+2000小费)。
-
 ## 工作原理
 我们运行pool服务端，并且使用多个钱包来获取挖矿任务，Worker定时10s获取一个当前服务端所有任务中，已有难度最低的任务，worker会进行10s的计算，将获取到的难度最高的答案提交，服务端会记录最高难度答案的提交者钱包。在任务55s需要提交时，最高难度的答案会被提交到区块链，同时收取矿工费用。
 
@@ -155,7 +130,7 @@ ore-cli提交奖励，需要消耗gas费用，在很多情况，会占用你奖�
 ## 费用
 
 
-pool-fee: 13%            (我们承担gas费用，以及server端维护)
+pool-fee: 15%            (我们承担gas费用，以及server端维护)
 
 ## 链接
 
@@ -163,16 +138,39 @@ pool-fee: 13%            (我们承担gas费用，以及server端维护)
 ##### program-fee账户: [链接](https://solscan.io/account/4756i3S8EPsTvKjVvUaCbP9JF8JpjQW7AmXEZnGeZDhp)
 
 
-##### TODO
+## 0.1.9 发布：
+本次更新只针对linux x86. 优化了锄头性能，建议尽量更新。
+## 0.1.8 发布：
+server 更新:
+1、单个server支持钱包数量不再有限制，但是不建议超过50个
+2、增加动态gas费用支持，使用方式：启动命令增加 --dynamic-gas。使用此参数后，--priority-fee  和 --base-jito-tip 参数将被覆盖
+worker 更新:
+1、优化了算力上报机制，网站上算力统计会更稳定
+2、单个task计算时间会视任务cutoff_time，最少留5s种上报，会降低较差网络环境下的challenge mismatch错误
+3、恢复了threads参数支持
+4、修正了一些参数默认值，简化public池启动命令
 
-1、windows版本支持(已完成)
+## 新版本0.1.7发布：
+新增连接统计，你可以访问http://route.oreminepool.top:8080/wallet_stats/钱包地址 查看你的机器使用状态。例如：http://route.oreminepool.top:8080/wallet_stats/Feei2iwqp9Adcyte1F5XnKzGTFL1VDg4VyiypvoeiJyJ
+如果你使用公开池，你需要更新woker。
+如果你使用自建server，你需要更新你自己的route server、server、worker。如果使用了自建route server，修改url为自建route server的url地址。否则使用自建server的url地址。
 
-2、浏览器支持
+## 新版本0.1.6发布：
 
-3、worker挖矿收益订阅
+自建server只需要增加—mine-coal即可开启同时挖COAL
 
-4、多服务端容错，服务异常可切换(已完成)
+## 新版本0.1.5发布：
 
-5、链上程序输出本次任务提交的hash，方便用户验证没有欺诈行为(已完成)
+更新客户端和start.sh
 
-6、dune图表(已完成)
+绑定核心和使用numa。如果你使用表现不如之前版本，可以先使用0.1.4版本。
+
+## 新版本0.1.3发布：
+
+它只是增加了客户端的稳定性，如果你使用时有稳定性问题，那么你才需要更新。
+
+## 新版本0.1.2发布：
+
+1、增加了bundle批量mine功能，在server端，新增参数--per-bundle-mine-count。这个参数会将挖矿钱包列表做捆绑，当他设置为3时，会将挖矿钱包每3个作为同一笔交易发送上链。这样当server端有15个钱包时，他们被3个为一组，共5组，这样会降低竞争损失。
+
+2、jito小费计算方式更新，修改为--base-jito-tip + 55s后间隔毫秒数 * 2，最大5w。(到达提交阶段后，每秒钟+2000小费)。
