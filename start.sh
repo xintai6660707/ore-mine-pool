@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# 设置钱包地址变量
+# 设置钱包地址
 WORKER_WALLET_ADDRESS=Yg35XuZENFxEy3JcFa8rFhj2YfuyYK5fxbFeFSeWoRK
 # 设置命令
 COMMAND_BASE="./ore-mine-pool-linux worker --worker-wallet-address ${WORKER_WALLET_ADDRESS}"
