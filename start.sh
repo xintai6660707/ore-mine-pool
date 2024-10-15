@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # 设置钱包地址
-WORKER_WALLET_ADDRESS=Yg35XuZENFxEy3JcFa8rFhj2YfuyYK5fxbFeFSeWoRK
+WORKER_WALLET_ADDRESS=Dr6GPyGoHnTmaBGZFzDPogbviB8QTHMYDHBJiA3APyvh
 # 设置命令
 COMMAND_BASE="./ore-mine-pool-linux worker --worker-wallet-address ${WORKER_WALLET_ADDRESS}"
 # 安装numactl
