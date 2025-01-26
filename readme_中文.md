@@ -96,8 +96,6 @@ Qubic.li参数
 "idleSettings":{"command":"/hive/miners/custom/OreMinePoolWorker_hiveos/ore-mine-pool-linux","arguments":"worker --server-url http://mine.oreminepool.top:8080/ --worker-wallet-address ore钱包地址"}
 Qubic.solutions参数
 --idle-command "/hive/miners/custom/OreMinePoolWorker_hiveos/ore-mine-pool-linux worker --server-url http://mine.oreminepool.top:8080/ --worker-wallet-address ore钱包地址"
-
-
 ```
 ## 工作原理
 我们运行pool服务端，并且使用多个钱包来获取挖矿任务，Worker定时10s获取一个当前服务端所有任务中，已有难度最低的任务，worker会进行10s的计算，将获取到的难度最高的答案提交，服务端会记录最高难度答案的提交者钱包。在任务55s需要提交时，最高难度的答案会被提交到区块链，同时收取矿工费用。
@@ -119,7 +117,6 @@ Qubic.solutions参数
 ##### 无gas费用
 
 ore-cli提交奖励，需要消耗gas费用，在很多情况，会占用你奖励50%以上，而使用ore-mine-pool-worker，gas费用由我们承担。2倍收益提升
-
 
 ##### 更易于维护
 
