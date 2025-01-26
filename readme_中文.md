@@ -25,7 +25,6 @@ ore-mine-pool是为orev2实现的矿池，矿工可以更简单的进行挖矿�
 10. nohup ./start.sh > start.log 2>&1 & //后台启动worker
 11. tail -f  worker.log //查看worker日志
 
-
 暂停任务：
 pkill -f start.sh
 pkill -f ore-mine-pool
