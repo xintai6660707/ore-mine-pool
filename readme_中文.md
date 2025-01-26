@@ -1,14 +1,12 @@
 # ore-mine-pool
 
-
 ore-mine-pool是为orev2实现的矿池，矿工可以更简单的进行挖矿，相对于ore-cli，更易于使用，更高效。
-我们目前产出约665个/天，占全网产能46%。
 
 ## 交流
 
 [discord](https://discord.gg/PjpqgmJkkY)
 
-[dune](https://dune.com/oreminepool/ore-mine-pool-dashboard)
+[dune](https://dune.com/oreminepool/new-ore-mine-pool-dashboard)
 
 [文档](https://minership.gitbook.io/ore-mine-pool-tutorial)
 
@@ -19,12 +17,13 @@ ore-mine-pool是为orev2实现的矿池，矿工可以更简单的进行挖矿�
 2. cd ore-mine-pool
 3. chmod +x start.sh
 4. chmod +x ore-mine-pool-linux
-5. 修改start.sh中的worker-wallet-address为你的钱包地址，确保你的钱包有ORE账户，没有的话买一点点即可自动开通
-6. 我们已经支持了同时进行COAL挖矿，确保你收款钱包拥有COAL账户(地址E3yUqBNTZxV8ELvW99oRLC7z4ddbJqqR4NphwrMug9zu)，如果你钱包还有没有COAL账户，购买一点点即可开通COAL账户，将自动开始同时接收COAL奖励。
-7. 默认机器名是你主机的hostname，在start.sh ./ore-mine-pool-linux worker 后面添加参数修改 --alias 机器名
-8. 默认开启全部线程，如果需要修改单个numa的线程数，添加 --threads 你的线程数
-9. nohup ./start.sh > start.log 2>&1 & //后台启动worker
-10. tail -f  worker.log //查看worker日志
+5. 修改start.sh中的worker-wallet-address为你的钱包地址
+6. 确保你的钱包有ORE和sORE账户，没有的话买一点点即可自动开通，sORE合约地址 GscNubSLLbXcEkGTFvs8FbnuocZnZdcZmAN1kMGocvtm
+7. 我们已经支持了同时进行COAL挖矿，确保你收款钱包拥有COAL账户(地址E3yUqBNTZxV8ELvW99oRLC7z4ddbJqqR4NphwrMug9zu)，如果你钱包还有没有COAL账户，购买一点点即可开通COAL账户，将自动开始同时接收COAL奖励。
+8. 默认机器名是你主机的hostname，在start.sh ./ore-mine-pool-linux worker 后面添加参数修改 --alias 机器名
+9. 默认使用全部核心，如要修改，添加 --core-range 0-4 表示使用 0,1,2,3,4 核心
+10. nohup ./start.sh > start.log 2>&1 & //后台启动worker
+11. tail -f  worker.log //查看worker日志
 
 
 暂停任务：
@@ -32,8 +31,8 @@ pkill -f start.sh
 pkill -f ore-mine-pool
 
 查看机器在线使用状态：
-http://route.oreminepool.top:8080/wallet_stats/钱包地址
-https://oreminepool.top/machines/钱包地址
+http://mine.oreminepool.top:8080/wallet_stats/钱包地址
+https://oreminepool.top/worker_stats/钱包地址
 
 监控solana链上ore-mine-pool所有记录:
 ./ore-mine-pool-linux  monitor   --rpc-ws-url  wss://xxxxxx
@@ -45,6 +44,22 @@ https://oreminepool.top/machines/钱包地址
 save record as csv ,for excel analysis:
 ./ore-mine-pool-linux  monitor   --rpc-ws-url  wss://xxxxxx   --csv_mode
 ```
+## sORE介绍
+### 什么是sORE？
+sORE代表在ore-mine-pool的权益，由于能否使用到boost系数与挖坑钱包中的ore数量相关。因此我们不会直接将ore提取出来，而是给你转帐sORE。他最初与ORE是1:1兑换的。
+
+### 为什么要持有sORE？
+因为sORE相对ORE升值！ 他们的关系类似mSOL与SOL 在初期挖坑奖励的10%是池费用，90%是分配给用户(以sORE方式)。大约总共已经挖到100个ORE时，我会配置为，10%(会看情况调整)的奖励分配给sORE。例如，当前池子已经挖到100个ORE，以铸造了100sORE的方式分发给矿工。下一笔挖矿挖到了1个ORE，那么10%池费用(0.1sORE)，80%给用户(0.8sORE)，10%给sORE持有者。此时链上账户记录池总资产为ore有101个,sORE有100.9个，那么sORE可以兑换更多的ORE
+
+### sORE如何变现？
+方法一，直接在jup出售 
+
+方法二，在https://stake.oreminepool.top/ 上unstake为ORE (当前兑换价格，收取1%费用)
+
+### 如何获得sORE？
+方法一，挖矿，奖励以sORE形式发放 
+
+方法二，在https://stake.oreminepool.top/ 上stake为ore，兑换为sORE (当前兑换价格，收取1%费用)
 ## qubic 空闲时段，运行 ore-mine-pool的方法
 ```
 先去 https://github.com/xintai6660707/ore-mine-pool/tree/main 下载 ore-mine-pool-linux 和 start.sh
@@ -69,19 +84,19 @@ Qubic.solution
 1.把rqiner、ore-mine-pool-linux 放到一个目录下
 2.添加执行权限
 sudo chmod+x ore-mine-pool-linux
-3.运行rqiner时 加上参数 --idle-command "./ore-mine-pool-linux worker --alias 你的机器名称 --route-server-url http://route.oreminepool.top:8080/ --server-url public --worker-wallet-address 你的ore钱包地址"
-比如 ./rqiner-x86-znver4 -t 32 -i 你的qubic钱包地址 --label 你的机器名称 --idle-command "./ore-mine-pool-linux worker --alias 你的机器名称 --route-server-url http://route.oreminepool.top:8080/ --server-url public --worker-wallet-address 你的ore钱包地址"
+3.运行rqiner时 加上参数 --idle-command "./ore-mine-pool-linux worker --alias 你的机器名称 --server-url http://mine.oreminepool.top:8080/ --worker-wallet-address 你的ore钱包地址"
+比如 ./rqiner-x86-znver4 -t 32 -i 你的qubic钱包地址 --label 你的机器名称 --idle-command "./ore-mine-pool-linux worker --alias 你的机器名称 --server-url http://mine.oreminepool.top:8080/ ---worker-wallet-address 你的ore钱包地址"
 
 HiveOS
 先安装oreminepool hiveOS版
-https://github.com/xintai6660707/ore-mine-pool/raw/main/OreMinePoolWorker_hiveos-0.1.7.tar.gz
+https://github.com/xintai6660707/ore-mine-pool/raw/main/OreMinePoolWorker_hiveos-latest.tar.gz
 如遇网络问题，用github代理下载
-https://ghp.ci/https://github.com/xintai6660707/ore-mine-pool/raw/main/OreMinePoolWorker_hiveos-0.1.7.tar.gz
+https://ghp.ci/https://github.com/xintai6660707/ore-mine-pool/raw/main/OreMinePoolWorker_hiveos-latest.tar.gz
 
 Qubic.li参数
-"idleSettings":{"command":"/hive/miners/custom/OreMinePoolWorker_hiveos/ore-mine-pool-linux","arguments":"worker --route-server-url http://route.oreminepool.top:8080/ --server-url public--worker-wallet-address ore钱包地址"}
+"idleSettings":{"command":"/hive/miners/custom/OreMinePoolWorker_hiveos/ore-mine-pool-linux","arguments":"worker --server-url http://mine.oreminepool.top:8080/ --worker-wallet-address ore钱包地址"}
 Qubic.solutions参数
---idle-command "/hive/miners/custom/OreMinePoolWorker_hiveos/ore-mine-pool-linux worker --route-server-url http://route.oreminepool.top:8080/ --server-url public --worker-wallet-address ore钱包地址"
+--idle-command "/hive/miners/custom/OreMinePoolWorker_hiveos/ore-mine-pool-linux worker --server-url http://mine.oreminepool.top:8080/ --worker-wallet-address ore钱包地址"
 
 
 ```
@@ -101,10 +116,6 @@ Qubic.solutions参数
 ##### 更好的bus选择
 
 在ore中，存在8个bus(每个bus有1/8的奖励容量)，ore-cli使用随机一个bus提交奖励，但是在bus存在不均衡的现象，如果你随机到的bus奖励为0了，那么就这次提交奖励为0。而ore-mine-pool-worker会选择最好的bus进行提交(链上程序查看最优bus)，保证获取满额奖励。效率提升不好量化暂不统计
-
-##### 质押奖励
-
-orev2中，有质押的矿工提交奖励，会有1-2之间的系数提升，你使用ore-cli提交奖励，因为你质押很少，基本系数无限接近于1，而ore-mine-pool-worker收取的矿工费用，会质押，因此你的收益会随着质押金额提升而提升，最终接近于2。接近于2倍效率提升
 
 ##### 无gas费用
 
@@ -134,8 +145,8 @@ pool-fee: 15%            (我们承担gas费用，以及server端维护)
 
 ## 链接
 
-##### ore-mine-pool链上程序地址: [Feei2iwqp9Adcyte1F5XnKzGTFL1VDg4VyiypvoeiJyJ](https://solscan.io/account/Feei2iwqp9Adcyte1F5XnKzGTFL1VDg4VyiypvoeiJyJ)
-##### program-fee账户: [链接](https://solscan.io/account/4756i3S8EPsTvKjVvUaCbP9JF8JpjQW7AmXEZnGeZDhp)
+##### ore-mine-pool链上程序地址: [AES5dZixV2mzzstpUHsXF3c3deuNSBVZn192p4KT2ekZ](https://solscan.io/account/AES5dZixV2mzzstpUHsXF3c3deuNSBVZn192p4KT2ekZ)
+##### program-fee账户: [链接](https://solscan.io/account/Feei2iwqp9Adcyte1F5XnKzGTFL1VDg4VyiypvoeiJyJ)
 
 
 ## 0.1.9 发布：

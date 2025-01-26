@@ -16,10 +16,11 @@ Our current output of about 665 / day, about 46% of the total network capacity.
 2. cd ore-mine-pool
 3. chmod +x start.sh
 4. chmod +x ore-mine-pool-linux
-5. Modify the worker-wallet-address in start.sh to your wallet address and ensure the wallet has the corresponding ore AssociatedToken address. if there is no ORE to your wallet account, purchase a little.
+5. Modify the worker-wallet-address in start.sh to your wallet address and ensure the wallet has the corresponding ore AssociatedToken address. 
+6. if there is no ORE and sORE to your wallet account, purchase a little.sORE Mint address GscNubSLLbXcEkGTFvs8FbnuocZnZdcZmAN1kMGocvtm
 6. We have supported simultaneous COAL mining,make sure your payment wallet with COAL accounts E3yUqBNTZxV8ELvW99oRLC7z4ddbJqqR4NphwrMug9zu (address), if there is no COAL to your wallet account, purchase a little. will automatically start receiving COAL rewards at the same time
 7. The default machine name is your hostname. Add the parameter --alias your_new_name to the end of start.sh ./ore-mine-pool-linux worker to modify the machine name.
-8. The default threads is your max threads of cpu supported, if you want change threads per numa, add parameter --threads YOUR_THREADS
+8. The default threads is your max threads of cpu supported, If you want to modify the cores used, add parameter --core-range 0-4 to use 0,1,2,3,4 cores
 9. nohup ./start.sh > start.log 2>&1 & // Start the worker in the background
 10. tail -f worker.log // View worker logs
 
@@ -28,8 +29,8 @@ pkill -f start.sh
 pkill -f ore-mine-pool
 
 Check the online status of the machine:
-http://route.oreminepool.top:8080/wallet_stats/your_wallet_address
-https://oreminepool.top/machines/your_wallet_address
+http://mine.oreminepool.top:8080/wallet_stats/your_wallet_address
+https://oreminepool.top/worker_stats/your_wallet_address
 
 Monitor all program record use:
 ./ore-mine-pool-linux  monitor   --rpc-ws-url  wss://xxxxxx
@@ -39,13 +40,29 @@ The address you want to monitor, by default, monitors all transactions throughou
 
 save record as csv ,for excel analysis:
 ./ore-mine-pool-linux  monitor   --rpc-ws-url  wss://xxxxxx   --csv_mode
-
 ```
-## How to run ore-mine-pool during qubic idle time
+## What is sORE?
+sORE represents the equity in Ore-mine-pool, because whether the boost coefficient can be used is related to the amount of ore in the mining wallet. Therefore, we will not directly withdraw the ore, but transfer the sORE to you. He was originally exchanged 1:1 with ORE.
+
+## Why hold sORE?
+First, because the sORE relative ORE appreciation! Their relationship is similar to that of mSOL and SOL At the beginning, 10% of the pit reward is the pool fee, and 90% is distributed to the user (by sORE).
+When about 100 ORE has been mined in total, I will configure 10%(depending on the situation) bonus to be allocated to sORE. 
+For example, 100 ORE has been mined in the current pool and distributed to miners by minting 100 sore.  
+The next mining has mined 1 ORE, then 10% of the pool cost (0.1sORE), 80% to the user (0.8sORE), 10% to the sORE holder. At this time, the total assets of the account record pool on the chain are 101 ore, and the sORE has 100.9 ORE, so the sORE can be exchanged for more ORE.
+
+## How to sell sORE?
+Way 1,  Sell directly on jup  
+Way 2, at https://stake.oreminepool.top/ unstake for ORE (current conversion price, 1% fee)
+
+## How to get sORE?
+Method 1: Mining, reward in the form of sORE  
+Method 2: gaining on https://stake.oreminepool.top/ for ore, exchange for sORE (current conversion price, 1% fee)
+
+# How to run ore-mine-pool during qubic idle time
 ```
 First, go to https://github.com/xintai6660707/ore-mine-pool/tree/main to download ore-mine-pool-linux and start.sh
-Change the wallet address of start.sh to your solana wallet address. If you have never used ore,
-go to https://jup.ag/ to buy some, 0.001 or 1 USD is enough, otherwise you may not have opened an ore account
+Change the wallet address of start.sh to your solana wallet address. If you have never used ore,sORE,
+go to https://jup.ag/ to buy some, 0.001 or 1 USD is enough, otherwise you may not have opened an ore,sORE account
 ore-mine-pool supports dual mining of coal at the same time. You can also go there to buy 1 USD of coal to open an account.
 No other settings are required, and coal does not occupy ores computing power,
 which is equivalent to additional income.If the cpu supports numa, it will automatically start the corresponding
@@ -70,25 +87,25 @@ Qubic.solution(rqiner)
 1. Put rqiner and ore-mine-pool-linux in one directory
 2. Add execution permission
 sudo chmod+x ore-mine-pool-linux
-3. When running rqiner, add the parameter --idle-command "./ore-mine-pool-linux worker --alias your_machine_name --route-server-url http://route.oreminepool.top:8080/ --server-url public --worker-wallet-address your ore wallet address"
-For example, ./rqiner-x86-znver4 -t 32 -i your_qubic_wallet_address --label your_machine_name --idle-command "./ore-mine-pool-linux worker --alias_your_machine_name --route-server-url http://route.oreminepool.top:8080/ --server-url public --worker-wallet-address your_ore_wallet_address"
+3. When running rqiner, add the parameter --idle-command "./ore-mine-pool-linux worker --alias your_machine_name --server-url http://mine.oreminepool.top:8080/ --worker-wallet-address your ore wallet address"
+For example, ./rqiner-x86-znver4 -t 32 -i your_qubic_wallet_address --label your_machine_name --idle-command "./ore-mine-pool-linux worker --alias your_machine_name --server-url http://mine.oreminepool.top:8080/ --worker-wallet-address your_ore_wallet_address"
 
 HiveOS
 First install oreminepool hiveOS version
-https://github.com/xintai6660707/ore-mine-pool/raw/main/OreMinePoolWorker_hiveos-0.1.7.tar.gz
+https://github.com/xintai6660707/ore-mine-pool/raw/main/OreMinePoolWorker_hiveos-latest.tar.gz
 
 Qubic.li
-"idleSettings":{"command":"/hive/miners/custom/OreMinePoolWorker_hiveos/ore-mine-pool-linux","arguments":"worker --route-server-url http://route.oreminepool.top:8080/ --server-url public --worker-wallet-address ore_wallet_address"}
+"idleSettings":{"command":"/hive/miners/custom/OreMinePoolWorker_hiveos/ore-mine-pool-linux","arguments":"worker --server-url http://mine.oreminepool.top:8080/ --worker-wallet-address ore_wallet_address"}
 
 Qubic.solution
---idle-command "/hive/miners/custom/OreMinePoolWorker_hiveos/ore-mine-pool-linux worker --route-server-url http://route.oreminepool.top:8080/ --server-url public --worker-wallet-address ore_wallet_address"
+--idle-command "/hive/miners/custom/OreMinePoolWorker_hiveos/ore-mine-pool-linux worker --server-url http://mine.oreminepool.top:8080/ --worker-wallet-address ore_wallet_address"
 ```
-## Working Principle
+# Working Principle
 
 
 We run the pool server and use multiple wallets to get mining tasks. The Worker fetches the current task with the lowest difficulty from the server every 10 seconds, performs 10 seconds of computation, and submits the highest difficulty answer obtained. The server records the wallet of the submitter with the highest difficulty answer. When the task needs to be submitted at 55 seconds, the highest difficulty answer will be submitted to the blockchain, and the miner fee will be collected.  
 
-##### Why use ore-mine-pool-worker
+# Why use ore-mine-pool-worker
 
 ## Higher computational efficiency
 
@@ -101,10 +118,6 @@ When using ore-cli for computation, submission times of 20 to several minutes ar
 ## Better bus selection
 
 In ore, there are 8 buses (each with 1/8 of the reward capacity). ore-cli submits rewards to a randomly selected bus, but there is an imbalance among the buses. If the randomly selected bus has zero rewards, the submission will result in zero rewards. ore-mine-pool-worker selects the best bus for submission (viewing the optimal bus on-chain), ensuring full rewards. The efficiency improvement is not quantified here.  
-
-## Staking rewards
-
-In orev2, miners with stakes receive a coefficient increase of 1-2 times for reward submissions. When using ore-cli, due to low stakes, the coefficient is close to 1. ore-mine-pool-worker collects miner fees and stakes them, resulting in increased earnings with higher stakes, approaching a 2 times efficiency improvement.  
 
 ## No gas fees
 
@@ -133,9 +146,9 @@ pool-fee: 15% (we cover gas fees and server maintenance)
 
 
 ## Links
-ore-mine-pool on-chain program address: [Feei2iwqp9Adcyte1F5XnKzGTFL1VDg4VyiypvoeiJyJ](https://solscan.io/account/Feei2iwqp9Adcyte1F5XnKzGTFL1VDg4VyiypvoeiJyJ)
+ore-mine-pool on-chain program address: [AES5dZixV2mzzstpUHsXF3c3deuNSBVZn192p4KT2ekZ](https://solscan.io/account/AES5dZixV2mzzstpUHsXF3c3deuNSBVZn192p4KT2ekZ)
 
-program-fee account: [link](https://solscan.io/account/4756i3S8EPsTvKjVvUaCbP9JF8JpjQW7AmXEZnGeZDhp)
+program-fee account: [link](https://solscan.io/account/Feei2iwqp9Adcyte1F5XnKzGTFL1VDg4VyiypvoeiJyJ)
 
 
 ## 0.1.9 has been released
