@@ -11,19 +11,18 @@ ore-mine-pool是为orev2实现的矿池，矿工可以更简单的进行挖矿�
 [文档](https://minership.gitbook.io/ore-mine-pool-tutorial)
 
 ## Worker 使用方法
-
 ```bash
+最新消息：我们已经推出了avx512版本，amd zen4提升超过50%，比较新的支持avx512的intel（6138不行）提升超过20%。
+如需使用，改为start-avx512.sh启动，同时后面提到的ore-mine-pool-linux改成ore-mine-pool-linux-avx512
 1. git clone https://github.com/xintai6660707/ore-mine-pool.git
 2. cd ore-mine-pool
-3. chmod +x start.sh
-4. chmod +x ore-mine-pool-linux
-5. 修改start.sh中的worker-wallet-address为你的钱包地址
-6. 确保你的钱包有ORE和sORE账户，没有的话买一点点即可自动开通，sORE合约地址 GscNubSLLbXcEkGTFvs8FbnuocZnZdcZmAN1kMGocvtm
-7. 我们已经支持了同时进行COAL挖矿，确保你收款钱包拥有COAL账户(地址E3yUqBNTZxV8ELvW99oRLC7z4ddbJqqR4NphwrMug9zu)，如果你钱包还有没有COAL账户，购买一点点即可开通COAL账户，将自动开始同时接收COAL奖励。
-8. 默认机器名是你主机的hostname，在start.sh ./ore-mine-pool-linux worker 后面添加参数修改 --alias 机器名
-9. 默认使用全部核心，如要修改，添加 --core-range 0-4 表示使用 0,1,2,3,4 核心
-10. nohup ./start.sh > start.log 2>&1 & //后台启动worker
-11. tail -f  worker.log //查看worker日志
+3. 修改start.sh中的worker-wallet-address为你的钱包地址
+4. 确保你的钱包有ORE和sORE账户，没有的话买一点点即可自动开通，sORE合约地址 GscNubSLLbXcEkGTFvs8FbnuocZnZdcZmAN1kMGocvtm
+5. 我们已经支持了同时进行COAL挖矿，确保你收款钱包拥有COAL账户(地址E3yUqBNTZxV8ELvW99oRLC7z4ddbJqqR4NphwrMug9zu)，如果你钱包还有没有COAL账户，购买一点点即可开通COAL账户，将自动开始同时接收COAL奖励。
+6. 默认机器名是你主机的hostname，在start.sh ./ore-mine-pool-linux worker 后面添加参数修改 --alias 机器名
+7. 默认使用全部核心，如要修改，添加 --core-range 0-4 表示使用 0,1,2,3,4 核心
+8. nohup ./start.sh > start.log 2>&1 & //后台启动worker
+9. tail -f  worker.log //查看worker日志
 
 暂停任务：
 pkill -f start.sh
