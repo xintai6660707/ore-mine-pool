@@ -60,10 +60,10 @@ trap "trap - SIGTERM && kill -- -$$" SIGINT SIGTERM EXIT
 sleep 5
 
 while true; do
-    num=`ps aux | grep -w ore-mine-pool-linux | grep -v grep |wc -l`
+    num=`ps aux | grep -w ore-mine-pool-linux-avx512 | grep -v grep |wc -l`
     if [ ${num} -lt $PROCESSES ];then
         echo "Num of processes is less than $PROCESSES restart it ..."
-        killall -9 ore-mine-pool-linux
+        killall -9 ore-mine-pool-linux-avx512
         start_process
     else
         echo "Process is running"

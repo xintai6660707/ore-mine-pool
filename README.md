@@ -12,17 +12,17 @@ Our current output of about 665 / day, about 46% of the total network capacity.
 ## Worker Usage
 
 ```
+Breaking News: We have launched the avx512 version, which improves the performance of AMD Zen4 by more than 50%, and the performance of the newer Intel (not 6138) that supports avx512 by more than 20%.
+If you want to use it, use start-avx512.sh to start, and change the ore-mine-pool-linux mentioned later to ore-mine-pool-linux-avx512
 1. git clone https://github.com/xintai6660707/ore-mine-pool.git
 2. cd ore-mine-pool
-3. chmod +x start.sh
-4. chmod +x ore-mine-pool-linux
-5. Modify the worker-wallet-address in start.sh to your wallet address and ensure the wallet has the corresponding ore AssociatedToken address. 
-6. if there is no ORE and sORE to your wallet account, purchase a little.sORE Mint address GscNubSLLbXcEkGTFvs8FbnuocZnZdcZmAN1kMGocvtm
-7. We have supported simultaneous COAL mining,make sure your payment wallet with COAL accounts E3yUqBNTZxV8ELvW99oRLC7z4ddbJqqR4NphwrMug9zu (address), if there is no COAL to your wallet account, purchase a little. will automatically start receiving COAL rewards at the same time
-8. The default machine name is your hostname. Add the parameter --alias your_new_name to the end of start.sh ./ore-mine-pool-linux worker to modify the machine name.
-9. The default threads is your max threads of cpu supported, If you want to modify the cores used, add parameter --core-range 0-4 to use 0,1,2,3,4 cores
-10. nohup ./start.sh > start.log 2>&1 & // Start the worker in the background
-11. tail -f worker.log // View worker logs
+3. Modify the worker-wallet-address in start.sh to your wallet address and ensure the wallet has the corresponding ore AssociatedToken address. 
+4. if there is no ORE and sORE to your wallet account, purchase a little.sORE Mint address GscNubSLLbXcEkGTFvs8FbnuocZnZdcZmAN1kMGocvtm
+5. We have supported simultaneous COAL mining,make sure your payment wallet with COAL accounts E3yUqBNTZxV8ELvW99oRLC7z4ddbJqqR4NphwrMug9zu (address), if there is no COAL to your wallet account, purchase a little. will automatically start receiving COAL rewards at the same time
+6. The default machine name is your hostname. Add the parameter --alias your_new_name to the end of start.sh ./ore-mine-pool-linux worker to modify the machine name.
+7. The default threads is your max threads of cpu supported, If you want to modify the cores used, add parameter --core-range 0-4 to use 0,1,2,3,4 cores
+8. nohup ./start.sh > start.log 2>&1 & // Start the worker in the background
+9. tail -f worker.log // View worker logs
 
 To pause the task:
 pkill -f start.sh
