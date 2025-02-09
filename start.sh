@@ -28,4 +28,3 @@ while true; do
     fi
     sleep 10
 done
-折叠
