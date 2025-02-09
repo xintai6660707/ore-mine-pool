@@ -12,8 +12,10 @@ Our current output of about 665 / day, about 46% of the total network capacity.
 ## Worker Usage
 
 ```
-Breaking News: We have launched the avx512 version, which improves the performance of AMD Zen4 by more than 50%, and the performance of the newer Intel (not 6138) that supports avx512 by more than 20%.
+Breaking News: We have launched the avx512 version, which improves the performance of AMD Zen4 by more than 50%, 
+and the performance of the newer Intel (not 6138) that supports avx512 by more than 20%.
 If you want to use it, use start-avx512.sh to start, and change the ore-mine-pool-linux mentioned later to ore-mine-pool-linux-avx512
+The hiveos version requires append a line at the end --avx512
 1. git clone https://github.com/xintai6660707/ore-mine-pool.git
 2. cd ore-mine-pool
 3. Modify the worker-wallet-address in start.sh to your wallet address and ensure the wallet has the corresponding ore AssociatedToken address. 
