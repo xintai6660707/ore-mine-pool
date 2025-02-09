@@ -14,6 +14,7 @@ ore-mine-pool是为orev2实现的矿池，矿工可以更简单的进行挖矿�
 ```bash
 最新消息：我们已经推出了avx512版本，amd zen4提升超过50%，比较新的支持avx512的intel（6138不行）提升超过20%。
 如需使用，改为start-avx512.sh启动，同时后面提到的ore-mine-pool-linux改成ore-mine-pool-linux-avx512
+hiveos版本，需要在最后添加一行 --avx512
 1. git clone https://github.com/xintai6660707/ore-mine-pool.git
 2. cd ore-mine-pool
 3. 修改start.sh中的worker-wallet-address为你的钱包地址
